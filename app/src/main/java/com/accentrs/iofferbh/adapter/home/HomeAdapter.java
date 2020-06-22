@@ -1,7 +1,9 @@
 package com.accentrs.iofferbh.adapter.home;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.accentrs.iofferbh.R;
@@ -338,6 +341,25 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
             viewHolder.rvHomeSlider.setAdapter(companyAdapter);
         }
 
+
+
+        new CountDownTimer(5000, 1000) {
+            int count;
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                transition(viewHolder);
+                Log.d("sssss", "sssssss");
+                count++;
+            }
+
+            @Override
+            public void onFinish() {
+                //Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                //animator.cancel();
+            }
+        }.start();
+
         viewHolder.ivDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -405,51 +427,6 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
                         ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
                     }
 
-//                    String url = "http://coupon.infoline.website/api/coupon_module";
-//
-//                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-//                            new Response.Listener<JSONObject>() {
-//                                @Override
-//                                public void onResponse(JSONObject response) {
-//
-//                                    try {
-//                                        JSONArray jsonArray = response.getJSONArray("data");
-//                                        JSONObject data = jsonArray.getJSONObject(0);
-//                                        String coupon = data.getString("coupon_module");
-//                                        String mycoup = data.getString("my_coupon_module");
-//
-//                                        if (Integer.parseInt(coupon) == 0) {
-//                                            viewHolder.ivCoupon.setVisibility(View.INVISIBLE);
-//
-//                                        } else {
-//
-//                                            if (Utils.isConnectedToInternet(mContext)) {
-//
-//                                                Intent mIntent = new Intent(mContext, CouponCategoryActivity.class);
-//                                                mContext.startActivity(mIntent);
-//
-//                                            } else {
-//                                                ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
-//                                            }
-//
-//                                        }
-//
-//                                    } catch (JSONException e) {
-//                                        e.printStackTrace();
-//                                    }
-//
-//
-//                                }
-//                            }, new Response.ErrorListener() {
-//                        @Override
-//                        public void onErrorResponse(VolleyError error) {
-//
-//                            Toast.makeText(mContext, "Error: " + error, Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                    });
-//
-//                    mQueue.add(request);
 //
 
             }
@@ -474,52 +451,7 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
                                             } else {
                                                 ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
                                             }
-//                    String url = "https://dev.sayg.co/api/coupon_module";
 //
-//                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-//                            new Response.Listener<JSONObject>() {
-//                                @Override
-//                                public void onResponse(JSONObject response) {
-//
-//                                    try {
-//                                        JSONArray jsonArray = response.getJSONArray("data");
-//                                        JSONObject data = jsonArray.getJSONObject(0);
-//                                        String coupon = data.getString("coupon_module");
-//                                        String mycoup = data.getString("my_coupon_module");
-//
-//                                        if (Integer.parseInt(mycoup) == 0) {
-////
-//                                            viewHolder.ivMyCoupon.setVisibility(View.INVISIBLE);
-//
-//                                        } else {
-//
-//
-//                                            if (Utils.isConnectedToInternet(mContext)) {
-//                                                Intent mIntent = new Intent(mContext, MyCouponActivity.class);
-//                                                mContext.startActivity(mIntent);
-//                                            } else {
-//                                                ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
-//                                            }
-//
-//                                        }
-//
-//                                    } catch (JSONException e) {
-//                                        e.printStackTrace();
-//                                    }
-//
-//                                }
-//                            }, new Response.ErrorListener() {
-//                        @Override
-//                        public void onErrorResponse(VolleyError error) {
-//
-//                            Toast.makeText(mContext, "Error: " + error, Toast.LENGTH_SHORT).show();
-//
-//                        }
-//
-//                    });
-//
-//                    mQueue.add(request);
-
 
 
             }
@@ -540,23 +472,11 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
                         lastVisible++;
                         viewHolder.rvHomeSlider.smoothScrollToPosition(lastVisible);
                     } else {
-//                        lastVisible = lastVisible - 2;
-//                        isScrollingForward = false;
-//                        viewHolder.rvHomeSlider.smoothScrollToPosition(lastVisible);
+//
                         viewHolder.rvHomeSlider.smoothScrollToPosition(0);
                     }
                 }
-//                else {
-//                    int firstVisible = ((LinearLayoutManager) viewHolder.rvHomeSlider.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
-//                    if (firstVisible > 0) {
-//                        firstVisible--;
-//                        viewHolder.rvHomeSlider.smoothScrollToPosition(firstVisible);
-//                    } else {
-//                        firstVisible =firstVisible + 2;
-//                        isScrollingForward = true;
-//                        viewHolder.rvHomeSlider.smoothScrollToPosition(firstVisible);
-//                    }
-//                }
+//
                 if (lastVisible == homeScreenModel.getLatestOffers().size() - 1) {
                     handler.postDelayed(this, 10000);
                 } else {
@@ -722,6 +642,19 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
             }
         }
         return companiesItemList;
+    }
+
+    private void transition(HomeSliderHolder viewHolder){
+        ValueAnimator translate = ValueAnimator.ofFloat(0.5f, 1f);
+        translate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float scale = Float.parseFloat(animation.getAnimatedValue().toString());
+                viewHolder.ivDelivery.setScaleX(scale);
+                viewHolder.ivDelivery.setScaleY(scale);
+            }
+        });
+        translate.start();
     }
 
 }
