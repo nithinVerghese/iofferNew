@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rk_company_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_company_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8_dp"
+        android:layout_marginLeft="@dimen/margin_8_dp">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="1.2dp"
+        android:layout_toEndOf="@+id/rl_company_margin"
+        android:layout_toRightOf="@+id/rl_company_margin"
+        android:background="@drawable/new_shadow_1">
+
+        <RelativeLayout
+            android:id="@+id/rl_company"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/iv_company"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:scaleType="centerInside"
+
+                />
+
+
+            <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                android:id="@+id/tv_company_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/category_all_text"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_12sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

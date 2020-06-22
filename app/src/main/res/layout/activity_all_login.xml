@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gr_bgcolor"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context="com.accentrs.iofferbh.activity.all_login">
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:drawableLeft="@drawable/ic_google_plus"-->
+        <!--android:drawablePadding="@dimen/margin_10_dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:text="Login with Google"-->
+        <!--android:id="@+id/btn_glog"-->
+        <!--/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:drawableLeft="@drawable/ic_facebook"-->
+        <!--android:drawablePadding="@dimen/margin_10_dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="@dimen/margin_15_dp"-->
+        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:text="Login with Facebook"-->
+        <!--android:id="@+id/btn_fblog"-->
+        <!--/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:drawableLeft="@drawable/ic_instagram"-->
+        <!--android:drawablePadding="@dimen/margin_10_dp"-->
+        <!--android:layout_marginTop="@dimen/margin_15_dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:text="Login with Instagram"-->
+        <!--android:id="@+id/btn_instalog"-->
+        <!--/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="@dimen/margin_70_dp"-->
+        <!--android:drawableLeft="@drawable/ic_login"-->
+        <!--android:drawablePadding="@dimen/margin_10_dp"-->
+        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:gravity="center"-->
+        <!--android:text="Login as Guest"-->
+        <!--android:id="@+id/device_log"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="@dimen/margin_30_dp"-->
+        <!--android:text="If you go with Guest login, \nwe are not responsible for your purchase history,\nin case of device lost "-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="@dimen/margin_15_dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textAlignment="center"-->
+        <!--android:gravity="center"-->
+        <!--/>-->
+
+</LinearLayout>

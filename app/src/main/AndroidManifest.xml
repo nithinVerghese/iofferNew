@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.accentrs.iofferbh">
+
+    <application
+        android:name=".application.IOfferBhApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_iofferbh_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.DeliveryStoreInfoActivity"></activity>
+        <activity android:name=".activity.dummy" />
+        <activity android:name=".activity.Coupon_search_new" />
+        <activity android:name=".activity.SearchCouponActivity" />
+        <activity android:name=".activity.Main2Activity" />
+        <activity android:name=".activity.paymentshare_c" />
+        <activity android:name=".activity.paymentshare" />
+        <activity android:name=".activity.signout" />
+        <activity android:name=".activity.a_deviceId" />
+        <activity android:name=".activity.a_social_Login" />
+        <activity android:name=".activity.coupon_view" />
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".activity.g_login" />
+        <activity android:name=".activity.login_inst" />
+        <activity android:name=".activity.log__in" />
+        <activity android:name=".activity.login" />
+        <activity android:name=".activity.PaymentActivity" />
+        <activity android:name=".activity.CouponRedeemActivity" />
+        <activity android:name=".activity.CouponGalleryActivity" />
+        <activity android:name=".activity.MyCouponActivity" />
+        <activity
+            android:name=".activity.CouponDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.CouponStoreActivity" />
+        <activity android:name=".activity.CouponCategoryActivity" />
+        <activity android:name=".activity.DeliveryActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HomeScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SpinningWheelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DeliveryStoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="text/html" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="infoline.website"
+                    android:scheme="http" />
+                <data
+                    android:host="www.infoline.website"
+                    android:scheme="http" />
+                <data
+                    android:host="infoline.website"
+                    android:scheme="https" />
+                <data
+                    android:host="www.infoline.website"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.OfferDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChangeAppLanguage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OfferGalleryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WishlistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CategoryOfferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GiftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WinnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LogActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="This App has stopped unexpectedly"
+            android:launchMode="singleTop"
+            android:theme="@style/AppDialogTheme"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.technapse.iofferbh.SEND_LOG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CompanyOfferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name=".fcm.FCM_RegistrationIntentService"
+            android:exported="false" />
+        <service
+            android:name=".fcm.FCM_TokenRefreshListener"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".fcm.FCM_PushNotificationListener"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.WishlistService"
+            android:exported="false" />
+        <service
+            android:name=".service.CompanyBitmapService"
+            android:exported="false" />
+        <service
+            android:name=".service.AdsPopupService"
+            android:exported="false" />
+    </application>
+
+    <meta-data
+        android:name="firebase_crashlytics_collection_enabled"
+        android:value="false" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

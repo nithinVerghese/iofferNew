@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.WishlistActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_wishlist_company_offer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e3e3e3"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <com.accentrs.iofferbh.view.OpenSansLightTextView
+        android:id="@+id/tv_no_wishlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fav_no_offer_in_favorite"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:textSize="@dimen/font_size_16sp"
+        />
+
+
+
+</RelativeLayout>

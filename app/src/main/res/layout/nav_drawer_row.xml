@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/ll_nav_row_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_10_dp"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:paddingStart="@dimen/spacing_normal"
+        android:paddingRight="@dimen/spacing_medium"
+        android:paddingEnd="@dimen/spacing_medium"
+        android:paddingBottom="@dimen/spacing_small">
+
+        <ImageView
+            android:id="@+id/iv_drawer_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+    <com.accentrs.iofferbh.view.OpenSansLightTextView
+        android:id="@+id/nav_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/margin_10_dp"
+        android:layout_marginLeft="@dimen/margin_10_dp"
+        android:paddingLeft="@dimen/padding_5_dp"
+        android:paddingStart="@dimen/padding_5_dp"
+        android:paddingEnd="@dimen/padding_5_dp"
+        android:paddingRight="@dimen/padding_5_dp"
+        android:paddingTop="@dimen/padding_5_dp"
+        android:paddingBottom="@dimen/padding_5_dp"
+        android:textSize="@dimen/font_size_14sp"
+
+        />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EBEBEB"
+        android:layout_below="@+id/ll_nav_row_content"
+        />
+
+</RelativeLayout>

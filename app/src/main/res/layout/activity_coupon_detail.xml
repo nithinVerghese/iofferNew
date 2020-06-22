@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_coupon_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CouponStoreActivity">
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/srl_coupon_detail_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_coupon_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e3e3e3"
+            android:fastScrollEnabled="true" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_coupon_detail_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pb_coupon_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_coupon_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/ll_coupon_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_130_dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="12dp"
+            android:elevation="@dimen/tab_elevation_value"
+            app:cardCornerRadius="@dimen/margin_3_dp"
+            tools:targetApi="lollipop"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:elevation="16dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_10_dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+
+                        <ImageView
+                            android:id="@+id/iv_coupon_store_logo"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_margin="5dp"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/bg_deactive_btn" />
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iv_coupon_store_logo"-->
+                        <!--android:layout_width="90dp"-->
+                        <!--android:layout_height="90dp"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:contentDescription="@string/app_name"-->
+                        <!--android:scaleType="fitCenter"-->
+                        <!--app:srcCompat="@drawable/bg_deactive_btn" />-->
+
+
+                    <TextView
+                        android:id="@+id/tv_coupon_store_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/msg_loading"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_coupon_detail_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_10_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_coupon_detail_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/app_name"
+                        android:transitionName="@string/shared_offer_image_name" />
+
+                    <TextView
+                        android:id="@+id/tv_coupon_category_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/photo_tint"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_10_dp"
+                        android:text="@string/menu"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_10_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/tv_coupon_detail_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left">
+
+                        <LinearLayout
+                            android:layout_width="59dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="34dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/offer_detail_location_text" />
+                        </LinearLayout>
+                        <!--android:drawableEnd="@drawable/ic_location"-->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_location" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/tv_coupon_detail_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="59dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="34dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/offer_detail_contact_text" />
+                        </LinearLayout>
+
+                        <!--android:drawableEnd="@drawable/ic_location"-->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_call" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="left"
+                        android:id="@+id/tv_coupon_detail_website"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="59dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="34dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/offer_detail_website_text" />
+                        </LinearLayout>
+
+                        <!--android:drawableEnd="@drawable/ic_location"-->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_website"/>
+
+                    </LinearLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_coupon_detail_website"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="34dp"-->
+                        <!--android:layout_marginEnd="@dimen/margin_5_dp"-->
+                        <!--android:layout_marginLeft="@dimen/margin_5_dp"-->
+                        <!--android:layout_marginBottom="@dimen/margin_5_dp"-->
+                        <!--android:drawableEnd="@drawable/ic_website"-->
+                        <!--android:drawableRight="@drawable/ic_website"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="@string/offer_detail_website_text"-->
+                        <!--android:textSize="@dimen/text_14sp" />-->
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/ll_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:targetApi="lollipop">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/exp_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Loading...."
+                    android:textColor="#b71c1c"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_7_dp"
+                android:orientation="vertical"
+                tools:targetApi="lollipop">
+
+                <ImageView
+                    android:id="@+id/iv_coupon_detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/app_name" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/tv_coupon_image_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Loading....!"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_16sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_coupon_title_ar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Loading...!"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tot_cpn"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#b71c1c"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_medium"
+                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/end_dt"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#b71c1c"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:fontFamily="@font/roboto_medium"-->
+                    <!--/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_50_dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:fontFamily="sans-serif-"
+                    android:text="@string/quantity"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/font_size_24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_decrease"
+                    android:layout_width="@dimen/standard_45"
+                    android:layout_height="@dimen/standard_45"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:textAlignment="center"
+                    android:onClick="decreaseQuantity"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/et_qty"
+                    android:layout_width="@dimen/standard_45"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:background="@drawable/round_corner_shape_solid_white"
+                    android:gravity="center"
+                    android:hint="1"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+
+                <Button
+                    android:id="@+id/btn_increase"
+                    android:layout_width="@dimen/standard_45"
+                    android:layout_height="@dimen/standard_45"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:textAlignment="center"
+                    android:onClick="increaseQuantity"
+                    android:text="+" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_50_dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:fontFamily="sans-serif-small"
+                    android:text="@string/price"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/font_size_24sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:background="@drawable/round_corner_shape_solid_white"
+                    android:gravity="center"
+                    android:hint="0.000"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/currency"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/font_size_24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                />
+                <TextView
+                    android:id="@+id/term_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5_dp"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:text="@string/terms"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_16sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_buy_now"
+                style="?android:textAppearanceSmall"
+                android:layout_width="@dimen/standard_155"
+                android:layout_height="@dimen/standard_55"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_5_dp"
+                android:layout_marginBottom="@dimen/margin_30_dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="@dimen/padding_10_dp"
+                android:text="@string/buy_now"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_no_coupon_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_20_dp"
+            android:gravity="center"
+            android:text="@string/no_coupon_currently"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/font_size_20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</ScrollView>

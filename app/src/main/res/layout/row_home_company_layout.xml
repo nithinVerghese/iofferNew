@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F89032"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/ll_offer_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8_dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+            android:id="@+id/tv_search_by_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:text="@string/search_by_company_text"
+            android:textColor="#f27421"
+            android:textSize="@dimen/font_medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_5_dp"
+            android:layout_marginLeft="@dimen/margin_5_dp"
+            android:layout_marginRight="@dimen/margin_5_dp"
+            android:layout_marginStart="@dimen/margin_5_dp"
+            android:background="#fcdfcc" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_home_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="3dp"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="@drawable/bg_transparent_gradient"
+    android:layout_marginBottom="6dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:elevation="@dimen/tab_elevation_value"
+    app:cardCornerRadius="@dimen/buttonDialogMargin"
+    >
+    <!--android:layout_margin="5dp" tools:ignore="UnusedAttribute"-->
+
+    <ImageButton
+        android:id="@+id/iv_coupon_category_image"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        />
+    <!--android:contentDescription="@string/app_name"-->
+    <TextView
+        android:id="@+id/tv_coupon_category_title"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center_vertical|end"
+        android:padding="@dimen/padding_10_dp"
+        android:text="@string/msg_loading"
+        android:textColor="@android:color/white"
+        android:textSize="0sp"
+        android:textStyle="bold" /><!--android:background="@drawable/bg_transparent_gradient"-->
+</android.support.v7.widget.CardView>

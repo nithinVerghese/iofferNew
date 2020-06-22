@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.NotificationActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/ll_notification_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_40_dp"
+                android:layout_marginRight="@dimen/margin_40_dp"
+                android:layout_marginTop="@dimen/margin_25_dp"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_40_dp"
+                android:paddingRight="@dimen/margin_40_dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/rl_push_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                        android:id="@+id/tv_push_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:lineSpacingExtra="2sp"
+                        android:text="@string/notification_text"
+                        android:textColor="#666666"
+                        android:textSize="16sp" />
+
+                    <Switch
+                        android:id="@+id/switch_push_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_notification_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:layout_marginEnd="@dimen/margin_25_dp"
+                    android:layout_marginLeft="@dimen/margin_25_dp"
+                    android:layout_marginRight="@dimen/margin_25_dp"
+                    android:layout_marginStart="@dimen/margin_25_dp"
+                    android:layout_marginTop="@dimen/margin_20dp"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_40_dp"
+                    android:layout_marginLeft="@dimen/margin_40_dp"
+                    android:layout_marginRight="@dimen/margin_40_dp"
+                    android:layout_marginStart="@dimen/margin_40_dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="2sp"
+                            android:text="@string/no_of_notification_per_day_text"
+                            android:textColor="#666666"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioGroup
+                            android:id="@+id/rg_notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_15_dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/rb_ten_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10_dp"
+                                android:paddingLeft="@dimen/padding_10_dp"
+                                android:paddingEnd="@dimen/padding_10_dp"
+                                android:paddingRight="@dimen/padding_10_dp"
+                                android:paddingStart="10dp"
+                                android:text="@string/notification_text_10"
+                                android:textColor="#666666"
+                                android:textSize="16sp" />
+
+                            <RadioButton
+                                android:id="@+id/rb_twenty_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_20_dp"
+                                android:paddingLeft="@dimen/padding_10_dp"
+                                android:paddingEnd="@dimen/padding_10_dp"
+                                android:paddingRight="@dimen/padding_10_dp"
+                                android:paddingStart="10dp"
+                                android:text="@string/notification_text_20"
+                                android:textColor="#666666"
+                                android:textSize="16sp" />
+
+                            <RadioButton
+                                android:id="@+id/rb_fifty_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_20_dp"
+                                android:paddingLeft="@dimen/padding_10_dp"
+                                android:paddingEnd="@dimen/padding_10_dp"
+                                android:paddingRight="@dimen/padding_10_dp"
+                                android:paddingStart="10dp"
+                                android:text="@string/notification_text_50"
+                                android:textColor="#666666"
+                                android:textSize="16sp" />
+
+                            <RadioButton
+                                android:id="@+id/rb_other_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_20_dp"
+                                android:paddingLeft="@dimen/padding_10_dp"
+                                android:paddingEnd="@dimen/padding_10_dp"
+                                android:paddingRight="@dimen/padding_10_dp"
+                                android:paddingStart="10dp"
+                                android:text="@string/notification_text_other"
+                                android:textColor="#666666"
+                                android:textSize="16sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_enter_custom_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:layout_marginEnd="@dimen/margin_25_dp"
+                    android:layout_marginLeft="@dimen/margin_25_dp"
+                    android:layout_marginRight="@dimen/margin_25_dp"
+                    android:layout_marginStart="@dimen/margin_25_dp"
+                    android:layout_marginTop="@dimen/margin_20dp"
+                    android:background="@drawable/edit_text_notification_submit_bottom_line"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/padding_8_dp"
+                        android:layout_marginStart="@dimen/padding_8_dp"
+                        android:paddingBottom="@dimen/padding_8_dp">
+
+                        <EditText
+                            android:id="@+id/et_notification_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="0123456789"
+                            android:hint="@string/notification_text_enter_here"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberSigned"
+                            android:maxLength="3"
+                            android:textColor="#bcbbbb" />
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_notification_submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/bg_notification_submit">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_20dp"
+                                android:layout_marginLeft="@dimen/margin_20dp"
+                                android:layout_marginRight="@dimen/margin_20dp"
+                                android:layout_marginStart="@dimen/margin_20dp"
+                                android:lineSpacingExtra="9.3sp"
+                                android:paddingBottom="@dimen/margin_8_dp"
+                                android:paddingTop="@dimen/margin_8_dp"
+                                android:text="@string/notification_text_submit"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_notification_submit_v1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:layout_marginEnd="@dimen/margin_25_dp"
+                    android:layout_marginLeft="@dimen/margin_25_dp"
+                    android:layout_marginRight="@dimen/margin_25_dp"
+                    android:layout_marginStart="@dimen/margin_25_dp"
+                    android:layout_marginTop="@dimen/margin_20dp"
+                    android:visibility="gone"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/padding_8_dp"
+                        android:layout_marginStart="@dimen/padding_8_dp"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/margin_5_dp"
+                        android:paddingBottom="@dimen/padding_8_dp"
+                        android:visibility="visible"
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/ll_notification_count_submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_notification_submit">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_35_dp"
+                                android:layout_marginLeft="@dimen/margin_35_dp"
+                                android:layout_marginRight="@dimen/margin_35_dp"
+                                android:layout_marginStart="@dimen/margin_35_dp"
+                                android:lineSpacingExtra="9.3sp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginBottom="12dp"
+                                android:text="@string/notification_text_submit"
+                                android:textColor="#ffffff"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+</LinearLayout>

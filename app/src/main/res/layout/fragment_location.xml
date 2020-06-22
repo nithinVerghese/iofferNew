@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.accentrs.iofferbh.view.OpenSansBoldTextView
+        android:id="@+id/tv_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_12_dp"
+        android:text="@string/location_text"
+        android:textColor="#333333"
+        android:textSize="@dimen/font_size_16sp" />
+
+    <View
+        android:id="@+id/tv_loc_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_below="@+id/tv_loc"
+        android:background="#333333"
+        android:visibility="invisible" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_loc_divider"
+        android:background="#e3e3e3"
+        android:paddingTop="@dimen/padding_8_dp"
+        android:paddingBottom="@dimen/padding_8_dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

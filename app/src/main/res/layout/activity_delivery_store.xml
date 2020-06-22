@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_coupon_store"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CouponStoreActivity"
+    android:background="#E1E1E1">
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/srl_coupon_store_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+
+    <TextView
+        android:id="@+id/tv_coupon_store_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00EEEEEE"
+        android:gravity="center"
+        android:padding="@dimen/padding_10_dp"
+        android:text="@string/msg_loading"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iv_nearest"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rv_delivery_store"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@drawable/near" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_delivery_store"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_coupon_store_title"
+
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="6dp"
+        android:fastScrollEnabled="true" />
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_coupon_store_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pb_coupon_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_coupon_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CouponStoreActivity"
+    android:background="@drawable/bg_gradient">
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_coupon_redeem_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+    <TextView
+        android:id="@+id/tv_my_coupon_redeem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e3e3e3"
+        android:gravity="center"
+        android:padding="@dimen/padding_10_dp"
+        android:text="@string/msg_loading"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_my_coupon_redeem_left_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_my_coupon_redeem_title"
+        android:background="#e3e3e3"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding_5_dp"
+        android:text="@string/msg_loading"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="@dimen/font_size_18sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_coupon_redeem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_my_coupon_redeem_left_title"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:fastScrollEnabled="true" />
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_coupon_redeem_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pb_coupon_redeem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

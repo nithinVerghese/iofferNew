@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white"
+    android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/bg_spinning_wheel"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/margin_25_dp"
+                    app:srcCompat="@drawable/ic_bingo" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-110dp"
+                    android:layout_marginStart="@dimen/margin_20dp"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:layout_marginEnd="@dimen/margin_20dp"
+                    android:layout_marginRight="@dimen/margin_20dp"
+                    android:background="@drawable/bg_curved_gift_voucher"
+                    android:paddingBottom="10dp"
+                    android:paddingEnd="@dimen/padding_10_dp"
+                    android:paddingStart="@dimen/padding_10_dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                                android:text="@string/congraculations_text"
+                                android:textColor="@color/color_303030"
+                                android:textSize="@dimen/font_size_12sp" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_3_dp"
+                            android:gravity="center"
+                            android:text="@string/participate_text"
+                            android:textColor="@color/color_303030"
+                            android:textSize="@dimen/font_size_10sp" />
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_3_dp"
+                            android:gravity="center"
+                            android:text="@string/participate_text_ar"
+                            android:textColor="@color/color_303030"
+                            android:textSize="@dimen/font_size_12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_20_dp"
+                            android:layout_marginEnd="@dimen/margin_15_dp"
+                            android:layout_marginStart="@dimen/margin_15_dp"
+                            android:layout_marginTop="@dimen/margin_12_dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                                    android:id="@+id/tv_sponsered_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_15_dp"
+                                    android:text="@string/the_gift_is_sponsored_by_text"
+                                    android:textColor="#303030"
+                                    android:textSize="14sp" />
+
+                                <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                                    android:id="@+id/tv_sponsered_company_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_3_dp"
+                                    android:text=""
+                                    android:textColor="#303030"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:id="@+id/iv_gift"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_20_dp"
+                                    android:layout_marginRight="@dimen/margin_20_dp"
+                                    android:layout_marginTop="@dimen/margin_5_dp"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitEnd" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/winner_text_raffle"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/font_size_10sp" />
+
+                <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_3_dp"
+                    android:gravity="center"
+                    android:text="@string/winner_text_raffle_ar"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/font_size_12sp" />
+
+                <View
+                    android:id="@+id/view_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginEnd="@dimen/margin_10_dp"
+                    android:layout_marginLeft="@dimen/margin_10_dp"
+                    android:layout_marginRight="@dimen/margin_10_dp"
+                    android:layout_marginStart="@dimen/margin_10_dp"
+                    android:layout_marginTop="@dimen/margin_15_dp"
+                    android:alpha="0.3"
+                    android:background="#8b8b8b"
+                 />
+
+                <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/submit_the_detail_for_raffle_draw_text"
+                    android:textColor="#303030"
+                    android:textSize="12sp" />
+
+                <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/submit_the_detail_for_raffle_draw_text_ar"
+                    android:textColor="#303030"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/full_name_text"
+                    android:textColor="#303030"
+                    android:textSize="12sp" />
+
+                <com.accentrs.iofferbh.view.OpenSansLigthEditText
+                    android:id="@+id/et_user_full_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_curved_edit_text"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="8dp"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/mobile_no_text"
+                    android:textColor="#303030"
+                    android:textSize="12sp" />
+
+                <com.accentrs.iofferbh.view.OpenSansLigthEditText
+                    android:id="@+id/et_user_mobile_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_curved_edit_text"
+                    android:inputType="numberDecimal"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="8dp"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_notification_submit"
+                android:gravity="center"
+                android:minHeight="@dimen/margin_25_dp"
+                android:paddingBottom="@dimen/margin_5_dp"
+                android:paddingEnd="@dimen/padding_10_dp"
+                android:paddingLeft="@dimen/padding_10_dp"
+                android:paddingRight="@dimen/padding_10_dp"
+                android:paddingStart="@dimen/padding_10_dp"
+                android:paddingTop="5dp"
+                android:text="Submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_know_the_rules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10_dp"
+            android:layout_marginRight="@dimen/margin_10_dp"
+            android:layout_marginTop="@dimen/margin_10_dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_game_gift_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingEnd="@dimen/padding_5_dp"
+                android:paddingLeft="@dimen/padding_5_dp"
+                android:paddingRight="@dimen/padding_5_dp"
+                android:paddingStart="@dimen/padding_5_dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/ic_close_spinning_wheel_white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rk_category_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/margin_5_dp"
+    android:layout_marginRight="@dimen/margin_5_dp"
+   >
+
+    <RelativeLayout
+        android:id="@+id/rl_category_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8_dp"
+        android:layout_marginLeft="@dimen/margin_8_dp"
+        android:visibility="gone"
+        >
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_company"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_toRightOf="@+id/rl_category_margin"
+        android:layout_toEndOf="@+id/rl_category_margin"
+        >
+        <ImageView
+            android:id="@+id/iv_company"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            />
+
+
+        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+            android:id="@+id/tv_company_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category_all_text"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_12sp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

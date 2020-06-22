@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:windowContentTransitions">true</item>
+
+    </style>
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/org_selected_bg_color</item>
+    </style>
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="tabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="android:background">@color/white</item>
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/TabTextAppearence</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+    </style>
+
+    <style name="TabTextAppearence" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/tab_text_color</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@mipmap/ic_iofferbh_logo</item>
+    </style>
+    <style name="downloadRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>
+
+    <style name="AppDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+
+        <item name="android:width">550dip</item>
+        <item name="android:height">100dip</item>
+    </style>
+
+</resources>

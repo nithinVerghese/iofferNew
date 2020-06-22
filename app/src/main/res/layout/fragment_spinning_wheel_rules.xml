@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_spin_wheel_dialog"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_know_the_rules"
+            android:layout_marginTop="-15dp"
+            android:orientation="vertical">
+
+
+            <com.accentrs.iofferbh.view.OpenSansBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/how_to_play_game_rule"
+                android:textSize="@dimen/font_size_16sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_game_rule_english"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/padding_5_dp"
+                        android:paddingEnd="@dimen/padding_15_dp"
+                        android:paddingLeft="@dimen/padding_15_dp"
+                        android:paddingRight="@dimen/padding_15_dp"
+                        android:paddingStart="@dimen/padding_15_dp"
+                        android:paddingTop="@dimen/margin_15_dp">
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_rule_1"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_12_dp" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_12_dp"
+                            android:text="@string/game_rule_2"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_12sp" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_5_dp"
+                            android:layout_marginTop="@dimen/margin_12_dp"
+                            android:text="@string/game_rule_3"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_12sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/padding_15_dp"
+                        android:paddingEnd="@dimen/padding_15_dp"
+                        android:paddingLeft="@dimen/padding_15_dp"
+                        android:paddingRight="@dimen/padding_15_dp"
+                        android:paddingStart="@dimen/padding_15_dp"
+                        android:paddingTop="@dimen/margin_5_dp">
+
+                        <com.accentrs.iofferbh.view.OpenSansBoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/how_to_play_game_rule_ar"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_16sp" />
+
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:gravity="start"
+                            android:layout_marginTop="@dimen/margin_12_dp"
+                            android:text="@string/game_rule_1_ar"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_12sp" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/margin_12_dp"
+                            android:gravity="start"
+                            android:text="@string/game_rule_2_ar"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_12sp" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="@dimen/padding_25_dp"
+                            android:layout_marginTop="@dimen/margin_12_dp"
+                            android:gravity="start"
+                            android:text="@string/game_rule_3_ar"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_know_the_rules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_5_dp"
+            android:layout_marginRight="@dimen/margin_5_dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_spinning_wheel_rules_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:padding="@dimen/padding_5_dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                app:srcCompat="@drawable/ic_close_spinning_wheel_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+</RelativeLayout>
+

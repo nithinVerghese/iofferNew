@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1065656274677",
+    "firebase_url": "https://iofferbh-bahrain.firebaseio.com",
+    "project_id": "iofferbh-bahrain",
+    "storage_bucket": "iofferbh-bahrain.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065656274677:android:254b20d704c2beca",
+        "android_client_info": {
+          "package_name": "com.technapse.iofferbh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065656274677-nu8ahrdif622n1bh967o9muhppquv0l6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrCG6Q3XlxjgIUt804Bt6T4250yv9wbr8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

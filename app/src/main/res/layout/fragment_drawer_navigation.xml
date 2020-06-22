@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_5_dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_15_dp"
+                android:gravity="start">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15_dp"
+                        android:layout_marginLeft="@dimen/margin_15_dp"
+                       >
+                        <ImageView
+                            android:id="@+id/iv_nav_profile"
+                            android:layout_width="175dp"
+                            android:layout_height="70dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_splash_iofferbh" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_nav_menu_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="-1.6sp"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="12.8sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_nav_menu_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_notification" />
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_10_dp"
+                            android:layout_marginStart="@dimen/margin_10_dp"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="@string/drawer_notification_text"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.3dp"
+                        android:layout_marginEnd="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:background="#f0f0f0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nav_menu_change_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_change_language" />
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_10_dp"
+                            android:layout_marginStart="@dimen/margin_10_dp"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="@string/drawer_change_language_text"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.3dp"
+                        android:layout_marginEnd="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:background="#f0f0f0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nav_menu_about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_about_us" />
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_10_dp"
+                            android:layout_marginStart="@dimen/margin_10_dp"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="@string/drawer_change_about_us_text"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.3dp"
+                        android:layout_marginEnd="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:background="#f0f0f0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nav_menu_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_change_location" />
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_20dp"
+                            android:layout_marginStart="@dimen/margin_20_dp"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="Change Location"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.3dp"
+                        android:layout_marginEnd="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:background="#f0f0f0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nav_menu_change_app_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_change_launague" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_20dp"
+                            android:layout_marginStart="@dimen/margin_20_dp"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="Settings"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.3dp"
+                        android:layout_marginEnd="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:background="#f0f0f0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nav_menu_contact_us"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_contact_us" />
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_10_dp"
+                            android:layout_marginStart="@dimen/margin_10_dp"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="@string/drawer_change_contact_us_text"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.3dp"
+                        android:layout_marginEnd="@dimen/margin_20_dp"
+                        android:layout_marginLeft="@dimen/margin_20_dp"
+                        android:layout_marginRight="@dimen/margin_20_dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:background="#f0f0f0" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_15_dp"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_15_dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="5.9sp"
+                            android:text="@string/drawer_change_reach_us_at_text"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_size_14sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_facebook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_facebook"
+                                android:layout_toLeftOf="@+id/iv_instagram"
+                                android:layout_toStartOf="@+id/iv_instagram"
+                                android:visibility="gone"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_instagram"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_instagram"
+                                android:layout_marginLeft="@dimen/padding_15_dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="@dimen/margin_25_dp"
+                                android:layout_marginRight="@dimen/margin_25_dp"
+                                />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

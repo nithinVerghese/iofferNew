@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F89032"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_5_dp"
+                android:weightSum="1.25">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_cardview">
+
+                        <ImageView
+                            android:id="@+id/iv_company_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="1dp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_company_call"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_call_black" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_2_dp"
+                            android:text="@string/offer_detail_call_text"
+                            android:textColor="#000000"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_company_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_location_black" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_2_dp"
+                            android:text="@string/offer_detail_location_text"
+                            android:textColor="#000000"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_company_website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_website_black" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_2_dp"
+                            android:text="@string/offer_detail_website_text"
+                            android:textColor="#000000"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_offer_wishlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_bookmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_offer_wishlist" />
+
+                    <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_2_dp"
+                        android:text=""
+                        android:textColor="#ed3d35"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                android:id="@+id/tv_offer_description_ar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_10_dp"
+                android:layout_marginTop="@dimen/margin_15_dp"
+                android:layout_marginEnd="@dimen/margin_10_dp"
+                android:layout_marginBottom="@dimen/margin_10_dp"
+                android:gravity="center"
+                android:text=""
+
+                />
+
+            <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                android:id="@+id/tv_offer_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_10_dp"
+                android:layout_marginTop="@dimen/margin_15_dp"
+                android:layout_marginEnd="@dimen/margin_10_dp"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                android:gravity="center"
+                android:text=""
+
+                />
+
+
+            <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                android:id="@+id/tv_offer_validity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_10_dp"
+                android:layout_marginTop="@dimen/margin_5_dp"
+                android:layout_marginEnd="@dimen/margin_10_dp"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                android:gravity="center"
+                android:text=""
+                android:visibility="gone"
+
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

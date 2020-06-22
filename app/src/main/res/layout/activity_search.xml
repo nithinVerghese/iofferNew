@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_search_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SearchActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/black"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:paddingBottom="@dimen/padding_8_dp"
+            android:layout_centerInParent="true"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/rl_search_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                >
+                <ImageView
+                    android:id="@+id/iv_search_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+
+
+
+
+            <EditText
+                android:id="@+id/et_main_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="13.3sp"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/textview_bottom_line_white"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:hint="@string/search_offer_text"
+                android:layout_marginStart="@dimen/margin_15_dp"
+                android:layout_marginLeft="@dimen/margin_15_dp"
+                android:layout_toRightOf="@+id/rl_search_back"
+                android:layout_toEndOf="@+id/rl_search_back"
+                android:layout_toLeftOf="@+id/iv_main_search"
+                android:layout_toStartOf="@+id/iv_main_search"
+                android:layout_marginBottom="@dimen/margin_5_dp"
+                android:layout_marginRight="@dimen/margin_5_dp"
+                android:layout_marginEnd="@dimen/margin_5_dp"
+                android:textColorHint="@color/colorAccent"
+                />
+
+            <ImageView
+                android:id="@+id/iv_main_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_white"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/margin_15_dp"
+                android:layout_marginRight="@dimen/margin_15_dp"
+                android:layout_marginBottom="@dimen/margin_5_dp"
+
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_search_offer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+        <com.accentrs.iofferbh.view.OpenSansLightTextView
+            android:id="@+id/tv_no_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_offer_no_offer_found_text"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:visibility="visible"
+            android:textSize="@dimen/font_size_16sp"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

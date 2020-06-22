@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_spinning_wheel">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_better_luck_next_time"
+        android:orientation="vertical">
+
+
+        <com.accentrs.iofferbh.view.OpenSansBoldTextView
+            android:id="@+id/tv_oops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:text="Oops!"
+            android:textSize="35sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/red_brown"
+        />
+
+        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+            android:id="@+id/tv_try_again_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Try again in"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#303030"
+            android:textSize="@dimen/font_size_16sp"
+           />
+
+        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+            android:id="@+id/tv_alert_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="@dimen/padding_10_dp"
+            android:text="Spinwheel not found"
+            android:textColor="#303030"
+            android:textSize="@dimen/font_size_18sp"
+            android:visibility="gone" />
+
+        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+            android:id="@+id/tv_game_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:text="00 : 00 : 00"
+            android:textSize="45sp"
+            android:textColor="#303030" />
+
+        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+            android:id="@+id/tv_start_browsing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:paddingStart="@dimen/padding_25_dp"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/padding_25_dp"
+            android:paddingEnd="@dimen/padding_25_dp"
+            android:paddingTop="@dimen/padding_8_dp"
+            android:paddingBottom="@dimen/padding_8_dp"
+            android:paddingRight="@dimen/padding_25_dp"
+            android:layout_marginBottom="45dp"
+            android:text="START BROWSING"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_play_now_drawable"
+             />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_better_luck_next_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_10_dp"
+        android:layout_marginRight="@dimen/margin_10_dp"
+        android:layout_marginTop="@dimen/margin_10_dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_better_luck_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingEnd="@dimen/padding_5_dp"
+            android:paddingLeft="@dimen/padding_5_dp"
+            android:paddingRight="@dimen/padding_5_dp"
+            android:paddingStart="@dimen/padding_5_dp"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:srcCompat="@drawable/ic_close_spinning_wheel_white" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>
+
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_home_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_5_dp"
+        android:paddingBottom="@dimen/margin_5_dp"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.accentrs.iofferbh.view.OpenSansRegularTextView
+        android:id="@+id/tv_offer_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9382A"
+        android:paddingLeft="@dimen/padding_8_dp"
+        android:paddingStart="@dimen/padding_8_dp"
+        android:paddingEnd="@dimen/padding_8_dp"
+        android:paddingRight="@dimen/padding_8_dp"
+        android:paddingTop="3dp"
+        android:textSize="@dimen/text_14sp"
+        android:paddingBottom="3dp"
+        android:layout_below="@+id/rv_home_category"
+        android:text="@string/category_all_text"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>

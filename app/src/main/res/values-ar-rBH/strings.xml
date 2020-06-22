@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">Iofferbh</string>
+
+    <string name="facebook_app_id">632188780578379</string>
+    <string name="fb_login_protocol_scheme">fb632188780578379</string>
+
+
+    <string name="home_text">"الصفحة الرئيسية"</string>
+    <string name="home__categories_text">الاقسام</string>
+    <string name="error_no_internet_msg">"يرجى التحقق من اتصالك بالشبكة."</string>
+    <string name="error_response_request_text">هناك شئ خاطئ، يرجى المحاولة فى وقت لاحق.</string>
+
+
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
+    <string name="msg_loading">"Loading &#8230;"</string>
+    <string name="please_wait_text">"Please wait &#8230;"</string>
+    <string name="shared_offer_image_name">"offer_image_view"</string>
+    <string name="txt_read_write_permission_txt">"يرجى السماح لأذونات القراءة والكتابة"</string>
+    <string name="txt_ok">حسنا</string>
+    <string name="text_settings">"إعدادات"</string>
+
+
+    // Navigation Drawer Strings
+
+    <array name="nav_drawer_home_label">
+        <item>الصفحة الرئيسية</item>
+
+    </array>
+
+
+    <string name="enter_change_password_text">"Enter your new "</string>
+    <string name="latest_offers_text">"آخر العروض"</string>
+    <string name="category_text">"الفئة"</string>
+    <string name="search_by_company_text">"البحث عن طريق الشركة"</string>
+    <string name="valid_till_text">" صالح حتى"</string>
+    <string name="d_text">"d"</string>
+    <string name="click_position_key">"click_position_key"</string>
+    <string name="offer_not_found_text">"العرض غير موجود"</string>
+    <string name="offers_days_left_text">" ايام متبقية"</string>
+    <string name="press_back_again_to_exit_text">"اضغط مرة أخرى للخروج"</string>
+
+    <string name="about_us_text">"Since we live in a very fast pace rhythm of life. On our way in this life,we miss a lot of things going on around us because we are just too busy.Now here is what "I offerbh" will do for you.It simply will make shopping only a few touches away from you. You can search,share,rate and even like products and redeem the discount coupons. It is a bridge between customers and productive companies.
+  <string name="contact_us_text">"For any general or business enquiries,you may call us or write an email to us anytime"</string>
+
+
+    </string>
+
+    <string name="wishlist_text">"مفضل"</string>
+    <string name="views_text">" الآراء"</string>
+    <string name="text_enter_search_keyword">"يرجى إدخال كلمة البحث"</string>
+
+
+    //Change language text
+    <string name="text_english">"الإنجليزية"</string>
+    <string name="text_arabic">"عربى"</string>
+    <string name="text_save_changes">"حفظ التغييرات"</string>
+
+    //Contact us text
+    <string name="contact_us_call_text">"36332273 973+"</string>
+    <string name="contact_us_email_text">"iofferbh@gmail.com"</string>
+    <string name="contact_us_terms_and_condition_text">"Terms &amp; Conditions"</string>
+
+
+    //Notification text
+    <string name="notification_text">"إعلام"</string>
+    <string name="no_of_notification_per_day_text">"عدد الإخطار في اليوم"</string>
+    <string name="notification_text_10">"10"</string>
+    <string name="notification_text_20">"20"</string>
+    <string name="notification_text_50">"50"</string>
+    <string name="notification_text_other">"Other"</string>
+    <string name="notification_text_enter_here">"أدخل هنا"</string>
+    <string name="notification_text_submit">"خضع"</string>
+
+    //Search screen text
+    <string name="search_offer_text">"عروض البحث"</string>
+    <string name="search_offer_no_offer_found_text">"لم يتم العثور على عروض"</string>
+
+    //Favorite screen text
+    <string name="fav_no_offer_in_favorite">"لا عروض في المفضلة"</string>
+
+    // Navigation Drawer screen text
+    <string name="drawer_notification_text">"إخطارات"</string>
+    <string name="drawer_change_language_text">"غير اللغة"</string>
+    <string name="drawer_change_about_us_text">"معلومات عنا"</string>
+    <string name="drawer_change_contact_us_text">"اتصل بنا"</string>
+    <string name="drawer_change_reach_us_at_text">"تواصل معنا"</string>
+
+    //Location Screen Text
+
+    <string name="location_text">"مواقع"</string>
+
+    //Category Screen Text
+    <string name="category_all_text">"الكل"</string>
+
+    //Offer detail screen text
+    <string name="offer_detail_contact_text">"للتواصل"</string>
+    <string name="offer_detail_call_text">"مكالمة"</string>
+    <string name="offer_detail_website_text">"موقع الكتروني"</string>
+    <string name="offer_detail_location_text">"موقعك"</string>
+
+    //Home screen text
+    <string name="home_offer_screen_move_to_top_text">"الانتقال إلى الأعلى"</string>
+
+    <string name="txt_save_changes">"حفظ التغييرات"</string>
+    <string name="txt_of">"من"</string>
+
+    <string name="all_in_hd_text">"رأي في HD"</string>
+
+    <string name="text_new_version_available">"النسخة الجديدة المتاحة"</string>
+    <string name="text_new_version_available_desc">"يرجى التحديث إلى الإصدار الجديد للمتابعة."</string>
+    <string name="text_no_thanks">"لا شكرا"</string>
+    <string name="text_update">"تحديث"</string>
+
+
+    //Spinning wheel text
+    <string name="spin_text">"SPIN"</string>
+    <string name="know_the_rules_text">"كيف تلعب؟"</string>
+    <string name="previous_winner_text">"Previous Winners"</string>
+
+    //Gift text
+    <string name="the_gift_is_sponsored_by_text">"This gift is \nsponsored by "</string>
+    <string name="iofferbh_text">"Iofferbh"</string>
+    <string name="submit_the_detail_for_raffle_draw_text">"Submit the details below to participate in the raffle draw"</string>
+    <string name="mobile_no_text">"Mobile No"</string>
+    <string name="full_name_text">"First Name"</string>
+
+    <string name="winner_not_found_header_text">"Iofferbh"</string>
+    <string name="winner_not_found_text">"Winner's will be announced at the end of the month"</string>
+    <string name="ok_text">"OK"</string>
+    <string name="try_chance_to_win_free_gift_everyday_text">"Try your chance to win free gift everyday"</string>
+
+    <string name="click_on_the_logo_to_see_the_prizes_you_may_win_this_month">"Click on the logo to see the prizes you may win this month!"</string>
+    <string name="click_on_the_logo_to_see_the_prizes_you_may_win_this_month_ar">"إضغط على الشعار لترى الجوائز المقدمة"</string>
+
+
+</resources>

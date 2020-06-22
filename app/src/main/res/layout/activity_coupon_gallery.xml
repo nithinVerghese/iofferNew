@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg_splash_gradient"
+    tools:ignore="ContentDescription">
+
+    <RelativeLayout
+        android:id="@+id/rl_coupon_gallery"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_10_dp"
+        android:layout_marginLeft="@dimen/margin_10_dp"
+        android:layout_marginTop="@dimen/margin_10_dp"
+        android:layout_marginEnd="@dimen/margin_10_dp"
+        android:layout_marginRight="@dimen/margin_10_dp"
+        android:layout_marginBottom="@dimen/margin_10_dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_coupon_gallery_logo"
+            android:layout_width="@dimen/margin_50_dp"
+            android:layout_height="@dimen/margin_50_dp"
+            android:layout_margin="@dimen/margin_14_dp"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/bg_deactive_btn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/menu"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_coupon_gallery_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="@string/msg_loading"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <com.accentrs.iofferbh.helper.ViewPagerMultiTouchFix
+        android:id="@+id/vp_offergallery"
+        android:layout_width="match_parent"
+        android:layout_height="596dp"
+        android:layout_above="@+id/view_pager_indicator"
+        android:layout_below="@+id/rl_coupon_gallery"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="5dp"
+        android:transitionName="@string/shared_offer_image_name">
+
+    </com.accentrs.iofferbh.helper.ViewPagerMultiTouchFix>
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/view_pager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_offer_count"
+        android:layout_gravity="center"
+        android:layout_marginBottom="-8dp"
+        android:background="@android:color/transparent"
+        android:padding="10dip"
+        android:visibility="visible"
+        app:fillColor="@color/white"
+        app:pageColor="@color/dark_gray"
+        app:radius="4dp"
+        app:strokeColor="#000000"
+        app:strokeWidth="0dp" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_offer_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_5_dp"
+        android:layout_marginBottom="@dimen/margin_10_dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.accentrs.iofferbh.view.OpenSansLightTextView
+                android:id="@+id/tv_offer_image_current_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12sp" />
+
+            <com.accentrs.iofferbh.view.OpenSansLightTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_of"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12sp" />
+
+            <com.accentrs.iofferbh.view.OpenSansLightTextView
+                android:id="@+id/tv_offer_image_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_offergallery"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.9"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

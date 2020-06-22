@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_spin_wheel_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg_spinning_wheel"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.accentrs.iofferbh.activity.SpinningWheelActivity">
+
+        <RelativeLayout
+            android:id="@+id/ll_know_the_rules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_spinning_wheel_game_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingEnd="@dimen/padding_5_dp"
+                android:paddingLeft="@dimen/padding_5_dp"
+                android:paddingRight="@dimen/padding_5_dp"
+                android:paddingStart="@dimen/padding_5_dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/ic_close_spinning_wheel_white" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_spinning_wheel_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_know_the_rules"
+            android:layout_marginTop="@dimen/margin_5_dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ll_spinning_wheel"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="@dimen/margin_2_dp"
+                android:visibility="visible">
+
+                <com.accentrs.iofferbh.spinninggame.LuckyWheelView
+                    android:id="@+id/luckyWheel"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    app:lkwBackgroundColor="#ffffff"
+                    app:lkwTextColor="#263238" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/dialog_luckyWheel"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_spinner_wheel_dialog" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_spinning_wheel_view_background"
+                android:gravity="center"
+                android:padding="@dimen/margin_2_dp"
+                android:visibility="visible">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_spinwheel_center_indicator"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_spin_button" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_spin_the_wheel_text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_spinning_wheel"
+                android:layout_marginTop="@dimen/margin_10_dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.accentrs.iofferbh.view.OpenSansBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spin the Wheel"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/font_size_22sp" />
+
+                <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:text="&amp; win FREE vouchers &amp; gifts"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/text_18sp" />
+
+                <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5_dp"
+                    android:text="لف العجلة و أربح قسائم شراء و هدايا"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/text_18sp" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_try_it"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_spin_the_wheel_text_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_play_now_drawable"
+                android:minHeight="35dp"
+                android:paddingBottom="8dp"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="8dp"
+                android:text="Try now"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

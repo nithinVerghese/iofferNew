@@ -1,0 +1,198 @@
+<resources>
+    <array name="nav_drawer_home_label">
+        <item>Home</item>
+
+    </array>
+
+    <string name="app_name">Iofferbh</string>
+
+
+    <string name="terms" translatable="false"><u>Terms and Conditions</u>.</string>
+    <string name="facebook_app_id">632188780578379</string>
+
+    <string name="fb_login_protocol_scheme">fb632188780578379</string>
+
+    <string name="web_client_id" translatable="false">216367328957-91cq3h2u6k6bmj7rt2iofk745tabaasf.apps.googleusercontent.com</string>
+    <string name="client_id" translatable="false">924350dd29e94885acf95f22f1171a83</string>
+    <string name="redirect_url" translatable="false">https://sayg.bh/</string>
+    <string name="base_url" translatable="false">https://instagram.com/</string>
+
+    <string name="get_user_info_url" translatable="false">https://api.instagram.com/v1/users/self/?access_token=</string>
+    <string name="com_auth0_client_id" translatable="false">m6u1Fb6grVL5OdtIffAepVF0KaUGxnW9</string>
+
+
+    <string name="com_auth0_domain" translatable="false">dev-ig58devl.auth0.com</string>
+    <string name="home_text">Home</string>
+    <string name="home__categories_text">Categories</string>
+    <string name="error_no_internet_msg">Please check your network connection.</string>
+
+
+    <string name="error_response_request_text">Something went wrong.Please try again later.</string>
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
+    <string name="msg_loading">"Loading &#8230;"</string>
+    <string name="please_wait_text">"Please wait &#8230;"</string>
+    <string name="shared_offer_image_name">"offer_image_view"</string>
+    <string name="txt_read_write_permission_txt">"Please allow read and write permissions"</string>
+    <string name="txt_ok">OK</string>
+
+
+    // Navigation Drawer Strings
+
+    <string name="text_settings">"SETTINGS"</string>
+
+
+    <string name="enter_change_password_text">"Enter your new "</string>
+    <string name="latest_offers_text">"Latest offers"</string>
+    <string name="category_text">"Category"</string>
+    <string name="search_by_company_text">"Search by company"</string>
+    <string name="valid_till_text">"Valid till "</string>
+    <string name="d_text">"d"</string>
+    <string name="click_position_key">"click_position_key"</string>
+    <string name="offer_not_found_text">"Offer's not found"</string>
+    <string name="offers_days_left_text">" days left"</string>
+    <string name="press_back_again_to_exit_text">"Press back again to exit"</string>
+
+    <string name="about_us_text">"Since we live in a very fast pace rhythm of life.On our way in this life,we miss a lot of things going on around us because we are just too busy.Now here is what "iofferbh" will do for you.It simply will make shopping only a few touches away from you. You can search,share,rate and even like products and redeem the discount coupons. It is a bridge between customers and productive companies.</string>
+
+    <string name="contact_us_text">"For any general or business enquiries,you may call us or write an email to us anytime"</string>
+
+
+    <string name="wishlist_text">"Favorite"</string>
+    <string name="views_text">" Views"</string>
+    <string name="text_enter_search_keyword">"Please enter search keyword"</string>
+
+
+    //Change language text
+    <string name="text_english">"English"</string>
+    <string name="text_arabic">"Arabic"</string>
+    <string name="text_save_changes">"Save Changes"</string>
+
+    //Contact us text
+    <string name="contact_us_call_text">"+973 36332273"</string>
+    <string name="contact_us_email_text">"iofferbh@gmail.com"</string>
+    <string name="contact_us_terms_and_condition_text">"Terms &amp; Conditions"</string>
+    <string name="contact_us_privacy_policy_text">"Privacy Policy"</string>
+
+
+    //Notification text
+    <string name="notification_text">"Notification"</string>
+    <string name="no_of_notification_per_day_text">"Number of notification per day"</string>
+    <string name="notification_text_10">"10"</string>
+    <string name="notification_text_20">"20"</string>
+    <string name="notification_text_50">"50"</string>
+    <string name="notification_text_other">"Other"</string>
+    <string name="notification_text_enter_here">"Enter here"</string>
+    <string name="notification_text_submit">"Submit"</string>
+
+    //Search screen text
+    <string name="search_offer_text">"Search Offers"</string>
+    <string name="search_offer_no_offer_found_text">"No offers found"</string>
+
+    //Favorite screen text
+    <string name="fav_no_offer_in_favorite">"No offers in favorite"</string>
+
+    // Navigation Drawer screen text
+    <string name="drawer_notification_text">"Notifications"</string>
+    <string name="drawer_change_language_text">"Change Language"</string>
+    <string name="drawer_change_about_us_text">"About us"</string>
+    <string name="drawer_change_contact_us_text">"Contact us"</string>
+    <string name="drawer_change_reach_us_at_text">"Reach us at"</string>
+
+    //Location Screen Text
+
+    <string name="location_text">"Locations"</string>
+
+    //Category Screen Text
+    <string name="category_all_text">"All"</string>
+
+    //Offer detail screen text
+    <string name="offer_detail_contact_text">"Contact"</string>
+    <string name="offer_detail_call_text">"Call"</string>
+    <string name="offer_detail_website_text">"Website "</string>
+    <string name="offer_detail_location_text">"Location"</string>
+
+    //Home screen text
+    <string name="home_offer_screen_move_to_top_text">"Move To Top"</string>
+
+    <string name="txt_save_changes">"Save Changes"</string>
+    <string name="txt_of">"of"</string>
+
+    <string name="all_in_hd_text">"VIEW IN HD"</string>
+    <string name="text_new_version_available">"New version available"</string>
+    <string name="text_new_version_available_desc">"Please,update to new version to continue."</string>
+    <string name="text_no_thanks">"NO, THANKS"</string>
+    <string name="text_update">"UPDATE"</string>
+
+
+    //Game rules text
+    <string name="spin_the_wheel_everyday_text">"Spin the wheel everyday and get a chance to win the raffle draw. Exciting gifts awaiting you every day."</string>
+    <string name="how_to_play_game_rule_ar">"كيف تلعب؟:"</string>
+    <string name="how_to_play_game_rule">"How to play:"</string>
+    <!--  <string name="game_rule_1">"1. You get a chance to spin the wheel once every day. Your next chance will be after 24 hours"</string>
+    <string name="game_rule_2">"2. If the spinner stops at any block that has a brand logo displayed in it, you become eligible for the raffle draw for that particular company"</string>
+    <string name="game_rule_3">"3. You need to enter your name and mobile number if your spinner stops on a block having the brand logo. If you do not enter your details and close the game, you will not be consider as eligible for that particular day"</string>
+    <string name="game_rule_4">"4. You can be eligible for the raffle draw to a maximum of 31 times in a month"</string>
+    <string name="game_rule_5">"5. If you skip or miss to spin the wheel on any day, you may take your chance within that particular 24 hour window by clicking on the spinner icon at the top of the app"</string>
+    <string name="game_rule_6">"6. The raffle draw is done on the last day of every month. The winners will be selected from the raffle draw for each participating brand"</string>
+    <string name="game_rule_7">"7. The winners will be contacted by iofferbh Team to help them claim their prizes"</string>
+    <string name="game_rule_8">"8. You can see the previous months winner list by clicking on the link ‘Previous Winners’"</string>
+-->
+    <string name="game_rule_1">"1. You get a chance to spin the wheel once in a day."</string>
+    <string name="game_rule_2">"2. When you win on the spinner, you become eligible to participate in the raffle draw for that prize."</string>
+    <string name="game_rule_3">"3. Winners will be selected from a random draw of entries at the end of the month."</string>
+
+    <string name="game_rule_1_ar">"1 .لديك فرصة واحدة يوميا للف العجله"</string>
+    <string name="game_rule_2_ar">"2. إذا ربحت على العجله ستتأهل للسحب على تلك الجائز"</string>
+    <string name="game_rule_3_ar">"3. و سيتم السحب على الرابح في نهاية كل شهر"</string>
+
+    //Winner text
+    <string name="no_winners_found">"No winner found"</string>
+    <string name="photo_text">"Photo"</string>
+    <string name="winner_name_text">"Winner Name"</string>
+    <string name="prize_won_text">"Prize Won"</string>
+    <string name="congraculations_text">"Congratulations"</string>
+    <string name="congraculations_text_ar">"تهانينا"</string>
+    <string name="congraculation_caps_text">"CONGRATULATIONS!"</string>
+    <string name="winner_text">"Winners"</string>
+    <string name="participate_text">"You just won a chance to participate* in the raffle draw"</string>
+    <string name="participate_text_ar">"تهنئة. لقد حصلت على فرصة للمشاركة بالفوز في السحب"</string>
+    <string name="winner_text_raffle">"*Winners are selected from a random raffle draw end of the month"</string>
+    <string name="winner_text_raffle_ar">"*سيكون اختيار الفائزين  من ضمن المشاركين في السحب نهاية الشهر"</string>
+
+    //Spinning wheel text
+    <string name="spin_text">"SPIN"</string>
+    <string name="know_the_rules_text">"How to play"</string>
+    <string name="previous_winner_text">"Previous Winners"</string>
+
+    //Gift text
+    <string name="the_gift_is_sponsored_by_text">"This gift is \nsponsored by "</string>
+    <string name="iofferbh_text">"Iofferbh"</string>
+    <string name="submit_the_detail_for_raffle_draw_text">"Submit the details below to participate in the raffle draw"</string>
+    <string name="submit_the_detail_for_raffle_draw_text_ar">"للمشاركة الرجاء توفير المعلومات المذكرة ادناه"</string>
+    <string name="mobile_no_text">"Mobile No"</string>
+    <string name="full_name_text">"First Name"</string>
+
+    <string name="winner_not_found_header_text">"Iofferbh"</string>
+    <string name="winner_not_found_text">"Winner's will be announced at the end of the month"</string>
+    <string name="ok_text">"OK"</string>
+    <string name="try_chance_to_win_free_gift_everyday_text">"Try your chance to win free gift everyday"</string>
+
+    <string name="click_on_the_logo_to_see_the_prizes_you_may_win_this_month">"Click on the logo to see the prizes you may win this month!"</string>
+    <string name="click_on_the_logo_to_see_the_prizes_you_may_win_this_month_ar">"إضغط على الشعار لترى الجوائز المقدمة"</string>
+    <string name="coupon_text">Coupon</string>
+    <string name="menu">Menu</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="currency">BHD</string>
+    <string name="contact">"Contact "</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="yes">Yes</string>
+    <string name="no">" No "</string>
+    <string name="no_data_found">No data found!</string>
+    <string name="my_coupons">My Coupons</string>
+    <string name="discount_coupons">Discount Coupons</string>
+    <string name="no_coupon_currently">No Coupon Currently</string>
+
+
+</resources>

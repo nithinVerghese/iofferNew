@@ -1,0 +1,405 @@
+Index: app/src/main/java/com/accentrs/iofferbh/activity/CategoryOfferActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/accentrs/iofferbh/activity/CategoryOfferActivity.java	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/java/com/accentrs/iofferbh/activity/CategoryOfferActivity.java	(date 1522005461800)
+@@ -170,7 +170,7 @@
+ 
+     private void hitCompanyOfferApi() {
+ 
+-        showProgressDialog(getString(R.string.msg_loading));
++//        showProgressDialog(getString(R.string.msg_loading));
+ 
+ 
+         String categoryOfferUrl = categoryId + "&" + Constants.PAGE_KEY + "=" + PAGE_COUNT + "&" + Constants.PAGE_SIZE_KEY + "=" + PAGE_SIZE;
+@@ -200,13 +200,13 @@
+                     setHomeCompanyOffersAdapter();
+                 }
+ 
+-                dismissProgressDialog();
++//                dismissProgressDialog();
+ 
+             }
+ 
+             @Override
+             public void onError(String error) {
+-                dismissProgressDialog();
++//                dismissProgressDialog();
+             }
+         });
+ 
+Index: app/src/main/java/com/accentrs/iofferbh/activity/HomeScreenActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/accentrs/iofferbh/activity/HomeScreenActivity.java	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/java/com/accentrs/iofferbh/activity/HomeScreenActivity.java	(date 1522007404150)
+@@ -534,10 +534,10 @@
+ //                    setScrollToTopFabVisibility(false);
+                 }
+ 
+-                if(dy > 0 && fabScrollToTop.getVisibility() == View.VISIBLE){
+-                    setScrollToTopFabVisibility(false);
+-                }else if(dy < 0 && fabScrollToTop.getVisibility() == View.GONE){
++                if(dy > 0 && fabScrollToTop.getVisibility() == View.GONE){
+                     setScrollToTopFabVisibility(true);
++                }else if(dy < 0 && fabScrollToTop.getVisibility() == View.VISIBLE){
++                    setScrollToTopFabVisibility(false);
+                 }
+ 
+ 
+@@ -549,7 +549,7 @@
+ 
+     private void hitCompanyOfferApi() {
+ 
+-        showProgressDialog(getString(R.string.msg_loading));
++//        showProgressDialog(getString(R.string.msg_loading));
+ 
+         String companyOfferUrl = companyId + "&" + Constants.PAGE_KEY + "=" + PAGE_COUNT + "&" + Constants.PAGE_SIZE_KEY + "=" + PAGE_SIZE;
+ 
+@@ -577,13 +577,13 @@
+                     setHomeCompanyOffersAdapter();
+                 }
+ 
+-                dismissProgressDialog();
++//                dismissProgressDialog();
+ 
+             }
+ 
+             @Override
+             public void onError(String error) {
+-                dismissProgressDialog();
++//                dismissProgressDialog();
+             }
+         });
+ 
+Index: app/src/main/java/com/accentrs/iofferbh/adapter/company/CompanyAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/accentrs/iofferbh/adapter/company/CompanyAdapter.java	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/java/com/accentrs/iofferbh/adapter/company/CompanyAdapter.java	(date 1522009000998)
+@@ -92,7 +92,7 @@
+                 protected void setResource(Bitmap resource) {
+                     RoundedBitmapDrawable circularBitmapDrawable =
+                             RoundedBitmapDrawableFactory.create(context.getResources(), resource);
+-                    circularBitmapDrawable.setCornerRadius(Utils.dipToPixels(8,context));
++                    circularBitmapDrawable.setCornerRadius(Utils.dipToPixels(4,context));
+                     holder.ivCompany.setImageDrawable(circularBitmapDrawable);
+                 }
+             });
+Index: app/src/main/java/com/accentrs/iofferbh/adapter/wishlist/WishlistOfferAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/accentrs/iofferbh/adapter/wishlist/WishlistOfferAdapter.java	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/java/com/accentrs/iofferbh/adapter/wishlist/WishlistOfferAdapter.java	(date 1522007295524)
+@@ -90,12 +90,7 @@
+ 
+             final String offerImage = Constants.BASE_URL + offersItemList.get(position).getOfferImages().get(0).getUrl();
+ 
+-//            GlideApp.with(context)
+-//                    .load(offerImage)
+-//                    .placeholder(R.drawable.iofferbh_placeholder)
+-//                    .into(holder.ivCompanyOffer);
+-//
+-            holder.rlOfferPlaceHolder.setVisibility(View.VISIBLE);
++           holder.rlOfferPlaceHolder.setVisibility(View.VISIBLE);
+ 
+ 
+             SimpleTarget target = new SimpleTarget<Bitmap>() {
+@@ -144,6 +139,7 @@
+                 mBundle.putSerializable(Constants.OFFER_DATA_KEY, offersItem);
+                 intent.putExtras(mBundle);
+                 context.startActivity(intent);
++
+             }
+         });
+     }
+Index: app/src/main/res/drawable/bg_circular_offer.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/bg_circular_offer.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/drawable/bg_circular_offer.xml	(date 1522006595176)
+@@ -4,6 +4,6 @@
+     <stroke android:color="#F9382A" android:width="1.3dp"/>
+     <solid android:color="@color/white"/>
+ 
+-    <corners android:radius="5dp"/>
++    <corners android:radius="3dp"/>
+ 
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable-mdpi/bg_circular_all_offer.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable-mdpi/bg_circular_all_offer.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/drawable-mdpi/bg_circular_all_offer.xml	(date 1522006542623)
+@@ -7,6 +7,6 @@
+     <solid android:color="#F9382A"/>
+ 
+ 
+-    <corners android:radius="5dp"/>
++    <corners android:radius="3dp"/>
+ 
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable-mdpi/bg_circular_offer_deselected.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable-mdpi/bg_circular_offer_deselected.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/drawable-mdpi/bg_circular_offer_deselected.xml	(date 1522006556154)
+@@ -3,6 +3,6 @@
+     xmlns:android="http://schemas.android.com/apk/res/android">
+     <stroke android:color="@color/colorAccent" android:width="0.8dp"/>
+     <solid android:color="@color/white"/>
+-    <corners android:radius="5dp"/>
++    <corners android:radius="3dp"/>
+ 
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/layout/gallery_toolbar_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/gallery_toolbar_layout.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/layout/gallery_toolbar_layout.xml	(date 1522007295563)
+@@ -16,14 +16,42 @@
+         android:layout_marginStart="@dimen/margin_20_dp"
+         android:src="@drawable/ic_arrow_back" />
+ 
++    <LinearLayout
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="end"
++        android:gravity="end"
++        android:layout_centerVertical="true"
++        android:layout_toStartOf="@+id/iv_share_offer"
++        android:layout_toLeftOf="@+id/iv_share_offer"
++        android:background="@drawable/bg_category_text"
++        >
+ 
+-    <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+-        android:id="@+id/tv_view_all_in_hd"
++        <com.accentrs.iofferbh.view.OpenSansBoldTextView
++            android:id="@+id/tv_view_all_in_hd"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginTop="5dp"
++            android:layout_marginBottom="5dp"
++            android:layout_marginStart="8dp"
++            android:layout_marginLeft="8dp"
++            android:layout_marginEnd="8dp"
++            android:layout_marginRight="8dp"
++
++            android:text="@string/all_in_hd_text"
++            android:textColor="@color/white"
++            android:textSize="9sp" />
++    </LinearLayout>
++
++
++
++    <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerVertical="true"
+         android:layout_toStartOf="@+id/iv_share_offer"
+         android:layout_toLeftOf="@+id/iv_share_offer"
++        android:visibility="gone"
+         android:text="@string/all_in_hd_text"
+         android:textColor="@color/white" />
+ 
+Index: app/src/main/res/layout/row_category_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/row_category_layout.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/layout/row_category_layout.xml	(date 1522005461602)
+@@ -30,10 +30,9 @@
+         >
+         <ImageView
+             android:id="@+id/iv_company"
+-            android:layout_width="46dp"
+-            android:layout_height="46dp"
++            android:layout_width="48dp"
++            android:layout_height="48dp"
+             android:scaleType="fitCenter"
+-            android:layout_margin="2dp"
+             />
+ 
+ 
+Index: app/src/main/res/layout/row_company_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/row_company_layout.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/layout/row_company_layout.xml	(date 1522006602402)
+@@ -20,20 +20,20 @@
+         android:layout_width="38dp"
+         android:layout_height="38dp"
+         android:background="@drawable/new_shadow_1"
+-        android:layout_margin="1dp"
+         android:layout_toRightOf="@+id/rl_company_margin"
++        android:layout_margin="1dp"
+         android:layout_toEndOf="@+id/rl_company_margin">
+         <RelativeLayout
+             android:id="@+id/rl_company"
+-            android:layout_width="37dp"
+-            android:layout_height="37dp"
++            android:layout_width="37.5dp"
++            android:layout_height="37.5dp"
+             android:layout_centerInParent="true"
+             >
+ 
+             <ImageView
+                 android:id="@+id/iv_company"
+-                android:layout_width="37dp"
+-                android:layout_height="37dp"
++                android:layout_width="36dp"
++                android:layout_height="36dp"
+                 android:scaleType="centerInside"
+                 android:layout_margin="2dp"
+                 />
+Index: app/src/main/res/layout/row_company_offer_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/row_company_offer_layout.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/layout/row_company_offer_layout.xml	(date 1522008216673)
+@@ -47,8 +47,8 @@
+ 
+                             <ImageView
+                                 android:id="@+id/iv_company"
+-                                android:layout_width="wrap_content"
+-                                android:layout_height="wrap_content"
++                                android:layout_width="40dp"
++                                android:layout_height="40dp"
+                                 android:layout_marginTop="@dimen/margin_8_dp"
+                                 android:background="@drawable/ic_cardview" />
+ 
+@@ -66,7 +66,7 @@
+                                     android:layout_marginTop="@dimen/margin_5_dp"
+                                     android:text=""
+                                     android:textColor="@color/black"
+-                                    android:textSize="@dimen/font_size_12sp" />
++                                    android:textSize="@dimen/font_size_10sp" />
+ 
+                                 <com.accentrs.iofferbh.view.OpenSansBoldTextView
+                                     android:id="@+id/tv_offer_validity_days_left"
+@@ -74,7 +74,7 @@
+                                     android:layout_height="wrap_content"
+                                     android:text=""
+                                     android:textColor="@color/black"
+-                                    android:textSize="@dimen/font_size_12sp" />
++                                    android:textSize="@dimen/font_size_10sp" />
+ 
+ 
+                             </LinearLayout>
+@@ -96,14 +96,14 @@
+                                         android:layout_height="match_parent"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_alignParentStart="true"
+-                                        android:layout_marginTop="3dp"
++
+                                         android:gravity="center_vertical"
+                                         android:layout_toLeftOf="@+id/view_offer_divider"
+                                         android:layout_toStartOf="@+id/view_offer_divider"
+                                         android:drawableLeft="@drawable/ic_action_ic_click_offer"
+                                         android:drawableStart="@drawable/ic_action_ic_click_offer"
+                                         android:text=""
+-                                        android:textSize="@dimen/text_12sp" />
++                                        android:textSize="@dimen/font_size_10sp" />
+ 
+                                     <View
+                                         android:id="@+id/view_offer_divider"
+@@ -162,12 +162,12 @@
+ 
+                     <RelativeLayout
+                         android:layout_width="match_parent"
+-                        android:layout_height="155dp">
++                        android:layout_height="125dp">
+ 
+                         <ImageView
+                             android:id="@+id/iv_company_offer"
+                             android:layout_width="match_parent"
+-                            android:layout_height="155dp"
++                            android:layout_height="125dp"
+                             android:scaleType="matrix" />
+ 
+                         <RelativeLayout
+@@ -216,7 +216,7 @@
+                                 android:lines="1"
+                                 android:maxLines="1"
+                                 android:textColor="@color/white"
+-                                android:textSize="@dimen/font_size_12sp" />
++                                android:textSize="@dimen/font_size_10sp" />
+ 
+ 
+                             <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+@@ -237,7 +237,7 @@
+                                 android:maxLines="1"
+                                 android:text=""
+                                 android:textColor="@color/white"
+-                                android:textSize="@dimen/text_12sp"
++                                android:textSize="@dimen/font_size_10sp"
+                                 android:visibility="visible" />
+ 
+ 
+Index: app/src/main/res/layout/row_home_slider_child_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/row_home_slider_child_layout.xml	(revision 5a55d263c1a90ced0f30b135132f1397cdd78c40)
++++ app/src/main/res/layout/row_home_slider_child_layout.xml	(date 1522007295465)
+@@ -11,8 +11,8 @@
+         android:foreground="?android:attr/selectableItemBackground"
+         card_view:cardCornerRadius="5dp"
+         card_view:cardElevation="2dp"
+-        android:layout_marginLeft="4dp"
+-        android:layout_marginStart="4dp"
++        android:layout_marginLeft="2dp"
++        android:layout_marginStart="2dp"
+         card_view:cardUseCompatPadding="true">
+ 
+         <LinearLayout
+@@ -21,16 +21,20 @@
+             android:orientation="horizontal">
+             <ImageView
+                 android:id="@+id/iv_company_image"
+-                android:layout_width="65dp"
+-                android:layout_height="55dp"
++                android:layout_width="35dp"
++                android:layout_height="35dp"
++                android:layout_marginLeft="2dp"
++                android:layout_marginStart="2dp"
++                android:layout_marginEnd="2dp"
++                android:layout_marginRight="2dp"
+                 android:layout_gravity="center"
+                 android:scaleType="fitCenter"
+                 />
+ 
+             <ImageView
+                 android:id="@+id/iv_latest_offer"
+-                android:layout_width="100dp"
+-                android:layout_height="130dp"
++                android:layout_width="70dp"
++                android:layout_height="90dp"
+                 android:scaleType="fitXY"
+                 />
+         </LinearLayout>

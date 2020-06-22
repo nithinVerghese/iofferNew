@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_coupon_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CouponStoreActivity"
+    android:background="@drawable/bg_gradient">
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_my_coupon_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lay"
+    android:background="#e3e3e3"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_my_coupon_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#e3e3e3"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/my_coupons"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/term"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lay"
+        android:layout_marginBottom="3dp"
+        android:layout_gravity="center"
+        android:background="#e3e3e3"
+        android:gravity="center"
+        android:text="@string/terms"
+        android:textColor="#b71c1c"
+        android:textSize="10sp" />
+
+</LinearLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_my_coupon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lay"
+        android:layout_gravity="center_horizontal"
+        android:fastScrollEnabled="true"
+        android:layout_margin="4dp"/>
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_my_coupon_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pb_my_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
