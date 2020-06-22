@@ -1,15 +1,13 @@
 package com.accentrs.iofferbh.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.accentrs.iofferbh.R;
-import com.accentrs.iofferbh.service.AdsPopupService;
 import com.accentrs.iofferbh.utils.SharedPreferencesData;
 
 public class a_social_Login extends AppCompatActivity {

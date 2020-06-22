@@ -17,7 +17,7 @@
             android:layout_weight="0.3"
             android:gravity="center">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_winning_user_image"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
@@ -59,7 +59,7 @@
                 android:background="@drawable/bg_winning_prize"
                 android:layout_gravity="center"
                 android:gravity="center">
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_winning_gift"
                     android:layout_width="55dp"
                     android:layout_height="55dp"

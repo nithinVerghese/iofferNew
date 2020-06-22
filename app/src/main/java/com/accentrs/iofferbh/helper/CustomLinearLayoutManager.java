@@ -1,7 +1,7 @@
 package com.accentrs.iofferbh.helper;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
  * Created by Ravi on 12-09-2017.

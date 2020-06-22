@@ -2,8 +2,8 @@ package com.accentrs.iofferbh.activity
 
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.GridLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import android.util.Log
 import com.accentrs.iofferbh.R
 import com.accentrs.iofferbh.adapter.coupon.CouponRedeemAdapter

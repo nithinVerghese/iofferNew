@@ -9,7 +9,7 @@
     android:background="@drawable/bg_spinning_wheel"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_in_the_raffle_draw" />
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/tv_congraculation"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
          />
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_gift"
         android:layout_width="match_parent"
         android:layout_height="120dp"
@@ -146,7 +146,7 @@
         app:layout_constraintStart_toStartOf="@+id/tv_user_full_name"
         app:layout_constraintTop_toTopOf="@+id/et_user_mobile_no" />
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -176,7 +176,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/et_user_full_name" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,6 +197,6 @@
         app:layout_constraintTop_toBottomOf="@+id/et_user_mobile_no" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

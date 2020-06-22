@@ -11,7 +11,7 @@ import com.accentrs.apilibrary.utils.Constants;
  * Created by khan on 9/18/2017.
  */
 
-public class OpenSansRegularRadioButton extends android.support.v7.widget.AppCompatRadioButton {
+public class OpenSansRegularRadioButton extends androidx.appcompat.widget.AppCompatRadioButton {
 
     public OpenSansRegularRadioButton(Context context) {
         super(context);

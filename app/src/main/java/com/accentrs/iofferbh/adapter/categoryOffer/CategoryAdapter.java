@@ -1,8 +1,8 @@
 package com.accentrs.iofferbh.adapter.categoryOffer;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +12,7 @@ import com.accentrs.apilibrary.utils.Constants;
 import com.accentrs.iofferbh.R;
 import com.accentrs.iofferbh.helper.GlideApp;
 import com.accentrs.iofferbh.model.categoryOffer.CategoriesItem;
-import com.accentrs.iofferbh.model.home.CompaniesItem;
 import com.accentrs.iofferbh.viewholder.CompanyViewHolder;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 

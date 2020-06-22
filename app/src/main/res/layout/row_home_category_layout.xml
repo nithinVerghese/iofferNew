@@ -4,7 +4,7 @@
     android:background="@color/white"
     >
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,7 +12,7 @@
         android:paddingBottom="@dimen/margin_5_dp"
         >
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.accentrs.iofferbh.view.OpenSansRegularTextView
         android:id="@+id/tv_offer_category"

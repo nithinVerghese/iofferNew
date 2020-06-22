@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -20,7 +20,6 @@ import com.accentrs.iofferbh.R;
 import com.accentrs.iofferbh.adapter.companyoffer.OfferAdapter;
 import com.accentrs.iofferbh.application.IOfferBhApplication;
 import com.accentrs.iofferbh.model.companydetail.CompanyDetailModel;
-import com.accentrs.iofferbh.model.home.LocationsItem;
 import com.accentrs.iofferbh.model.home.OffersItem;
 import com.accentrs.iofferbh.service.WishlistService;
 import com.accentrs.iofferbh.utils.SharedPreferencesData;
@@ -30,7 +29,6 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import static com.accentrs.iofferbh.service.WishlistService.WISHLIST_REMOVE_RESULT;

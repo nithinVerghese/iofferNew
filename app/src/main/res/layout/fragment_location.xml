@@ -21,7 +21,7 @@
         android:background="#333333"
         android:visibility="invisible" />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +30,6 @@
         android:paddingTop="@dimen/padding_8_dp"
         android:paddingBottom="@dimen/padding_8_dp">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

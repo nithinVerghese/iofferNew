@@ -3,23 +3,19 @@ package com.accentrs.iofferbh.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 
 import com.accentrs.apilibrary.utils.Constants;
 import com.accentrs.iofferbh.R;
 import com.accentrs.iofferbh.activity.SpinningWheelActivity;
-import com.accentrs.iofferbh.adapter.location.LocationAdapter;
 import com.accentrs.iofferbh.model.companydetail.LocationsItem;
 
 import java.util.ArrayList;

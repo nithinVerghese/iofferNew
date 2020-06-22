@@ -1,6 +1,6 @@
 package com.accentrs.iofferbh.viewholder.spinningwheel;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.accentrs.iofferbh.R;

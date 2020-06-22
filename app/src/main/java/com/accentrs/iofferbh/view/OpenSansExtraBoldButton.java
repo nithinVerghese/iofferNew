@@ -10,7 +10,7 @@ import com.accentrs.apilibrary.utils.Constants;
  * Created by khan on 9/21/2017.
  */
 
-public class OpenSansExtraBoldButton extends android.support.v7.widget.AppCompatButton {
+public class OpenSansExtraBoldButton extends androidx.appcompat.widget.AppCompatButton {
     public OpenSansExtraBoldButton(Context context) {
         super(context);
         this.setTypeface(Typeface.createFromAsset(context.getAssets(), Constants.OPEN_SANS_EXTRA_BOLD));

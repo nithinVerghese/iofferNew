@@ -4,7 +4,7 @@ package com.accentrs.iofferbh.interfaces;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.View;
 
 import com.accentrs.iofferbh.utils.SharedPreferencesData;

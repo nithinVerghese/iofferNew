@@ -3,7 +3,7 @@
 
     <!--android:layout_marginTop="@dimen/margin_5_dp"-->
     <!--android:layout_marginRight="0dp"-->
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_delivery_store"
@@ -55,5 +55,5 @@
     </LinearLayout>
 
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
 

@@ -1,12 +1,12 @@
 package com.accentrs.iofferbh.activity;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,13 +17,10 @@ import com.accentrs.iofferbh.adapter.wishlist.WishlistOfferAdapter;
 import com.accentrs.iofferbh.application.IOfferBhApplication;
 import com.accentrs.iofferbh.model.bookmark.BookmarkModel;
 import com.accentrs.iofferbh.model.bookmark.BookmarksItem;
-import com.accentrs.iofferbh.utils.Utils;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.xml.transform.Result;
 
 public class WishlistActivity extends BaseActivity {
 

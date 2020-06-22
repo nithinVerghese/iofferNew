@@ -10,7 +10,7 @@ import com.accentrs.apilibrary.utils.Constants;
  * Created by Ravi on 21-09-2017.
  */
 
-public class OpenSansLigthEditText extends android.support.v7.widget.AppCompatEditText {
+public class OpenSansLigthEditText extends androidx.appcompat.widget.AppCompatEditText {
 
     public OpenSansLigthEditText(Context context) {
         super(context);

@@ -40,7 +40,7 @@
         android:layout_marginBottom="5dp"
         app:srcCompat="@drawable/near" />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_delivery_store"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

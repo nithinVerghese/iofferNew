@@ -2,14 +2,16 @@ package com.accentrs.iofferbh.adapter.companyOfferImage;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.accentrs.apilibrary.utils.Constants;
 import com.accentrs.iofferbh.R;
@@ -28,7 +30,7 @@ import java.util.ArrayList;
  * Created by ambab on 5/11/2016.
  */
 
-public class OfferGalleryImageAdapter extends android.support.v4.view.PagerAdapter {
+public class OfferGalleryImageAdapter extends PagerAdapter {
 
     private Context mContext;
     private LayoutInflater layoutInflater;

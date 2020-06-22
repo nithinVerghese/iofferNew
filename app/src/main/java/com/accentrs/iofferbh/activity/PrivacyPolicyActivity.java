@@ -1,7 +1,7 @@
 package com.accentrs.iofferbh.activity;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.webkit.WebView;
 
 import com.accentrs.iofferbh.R;

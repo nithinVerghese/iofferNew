@@ -4,7 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-public class ViewPagerMultiTouchFix extends android.support.v4.view.ViewPager {
+import androidx.viewpager.widget.ViewPager;
+
+public class ViewPagerMultiTouchFix extends ViewPager {
 
     public ViewPagerMultiTouchFix(Context context) {
         super(context);

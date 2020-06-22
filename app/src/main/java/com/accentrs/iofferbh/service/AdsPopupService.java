@@ -3,7 +3,7 @@ package com.accentrs.iofferbh.service;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.accentrs.apilibrary.callback.Results;
 import com.accentrs.apilibrary.interfaces.ResponseType;

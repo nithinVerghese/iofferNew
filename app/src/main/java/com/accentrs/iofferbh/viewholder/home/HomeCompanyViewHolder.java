@@ -1,9 +1,7 @@
 package com.accentrs.iofferbh.viewholder.home;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.accentrs.iofferbh.R;
 import com.accentrs.iofferbh.viewholder.MainViewHolder;

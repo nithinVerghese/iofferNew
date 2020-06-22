@@ -1,7 +1,7 @@
 package com.accentrs.iofferbh.viewholder.coupon//CouponStoreSearchViewHolder
 
 
-import android.support.v7.widget.CardView
+import androidx.cardview.widget.CardView
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout

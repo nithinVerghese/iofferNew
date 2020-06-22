@@ -11,7 +11,7 @@ import android.graphics.Bitmap;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -56,6 +56,7 @@ public class FCM_PushNotificationListener extends FirebaseMessagingService {
         Bundle notificationBundle = new Bundle();
         Intent intent = new Intent(this, SplashScreenActivity.class);
         if (remoteMessage.getData().size() > 0) {
+        //if (remoteMessage.getData().size() > 0) {
             JSONObject notificationJsonObject = new JSONObject(remoteMessage.getData());
             try {
                 notificationBundle.putString(Constants.NOTIFICATION_DATA, notificationJsonObject.toString());

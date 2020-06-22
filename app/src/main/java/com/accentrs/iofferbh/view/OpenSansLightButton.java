@@ -11,7 +11,7 @@ import com.accentrs.apilibrary.utils.Constants;
  * Created by khan on 9/18/2017.
  */
 
-public class OpenSansLightButton extends android.support.v7.widget.AppCompatButton {
+public class OpenSansLightButton extends androidx.appcompat.widget.AppCompatButton {
     public OpenSansLightButton(Context context) {
         super(context);
         this.setTypeface(Typeface.createFromAsset(context.getAssets(), Constants.OPEN_SANS_LIGHT));

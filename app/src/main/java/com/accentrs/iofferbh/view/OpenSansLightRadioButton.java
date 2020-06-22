@@ -11,7 +11,7 @@ import com.accentrs.apilibrary.utils.Constants;
  * Created by khan on 9/18/2017.
  */
 
-public class OpenSansLightRadioButton extends android.support.v7.widget.AppCompatRadioButton {
+public class OpenSansLightRadioButton extends androidx.appcompat.widget.AppCompatRadioButton {
     public OpenSansLightRadioButton(Context context) {
         super(context);
         this.setTypeface(Typeface.createFromAsset(context.getAssets(), Constants.OPEN_SANS_LIGHT));

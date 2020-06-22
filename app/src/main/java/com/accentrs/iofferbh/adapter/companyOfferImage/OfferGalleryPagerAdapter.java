@@ -1,7 +1,7 @@
 package com.accentrs.iofferbh.adapter.companyOfferImage;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,6 @@ import com.accentrs.iofferbh.activity.OfferGalleryActivity;
 import com.accentrs.iofferbh.helper.GlideApp;
 import com.accentrs.iofferbh.model.home.OfferImagesItem;
 import com.accentrs.iofferbh.viewholder.offerimage.OfferGalleryImageViewHolder;
-import com.accentrs.iofferbh.viewholder.offerimage.OfferGalleryThumbnailViewHolder;
 import com.android.volley.toolbox.ImageLoader;
 
 import java.util.ArrayList;

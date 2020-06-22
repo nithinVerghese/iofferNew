@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 /**
  * Created by Accentrs.
  */
-public class MySpinner extends android.support.v7.widget.AppCompatSpinner {
+public class MySpinner extends androidx.appcompat.widget.AppCompatSpinner {
 
     OnItemSelectedListener listener;
 

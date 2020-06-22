@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -29,11 +28,6 @@ import com.accentrs.iofferbh.activity.ContactUsActivity;
 import com.accentrs.iofferbh.activity.DrawerActivity;
 import com.accentrs.iofferbh.activity.NotificationActivity;
 import com.accentrs.iofferbh.adapter.drawer.NavigationDrawerAdapter;
-import com.accentrs.iofferbh.model.drawer.DrawerModel;
-import com.accentrs.iofferbh.utils.SharedPreferencesData;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class FragmentDrawer extends Fragment implements View.OnClickListener {

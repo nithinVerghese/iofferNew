@@ -1,10 +1,10 @@
 package com.accentrs.iofferbh.activity;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,18 +18,10 @@ import android.widget.TextView;
 import com.accentrs.apilibrary.callback.Results;
 import com.accentrs.apilibrary.interfaces.ResponseType;
 import com.accentrs.iofferbh.R;
-import com.accentrs.iofferbh.adapter.company.CompanyOfferAdapter;
 import com.accentrs.iofferbh.adapter.search.SearchOfferAdapter;
-import com.accentrs.iofferbh.adapter.wishlist.WishlistOfferAdapter;
-import com.accentrs.iofferbh.application.IOfferBhApplication;
-import com.accentrs.iofferbh.model.bookmark.BookmarkModel;
-import com.accentrs.iofferbh.model.bookmark.BookmarksItem;
 import com.accentrs.iofferbh.model.home.HomeScreenModel;
 import com.accentrs.iofferbh.utils.Utils;
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class SearchActivity extends HeaderActivity {
 

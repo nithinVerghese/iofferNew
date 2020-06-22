@@ -8,7 +8,7 @@
     android:background="@color/black"
     tools:ignore="ContentDescription">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/offer_gallery_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/actionBarSize"
@@ -94,7 +94,7 @@
     </LinearLayout>
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_offergallery"
         android:layout_width="match_parent"
         android:layout_height="130dp"

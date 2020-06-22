@@ -23,7 +23,7 @@
             android:gravity="center"
             android:layout_below="@+id/ll_know_the_rules">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 app:srcCompat="@drawable/ic_spinner_wheel_dialog"
                 android:id="@+id/dialog_luckyWheel"
                 android:scaleType="fitCenter"
@@ -39,7 +39,7 @@
             android:layout_marginEnd="@dimen/margin_5_dp"
             android:layout_marginRight="@dimen/margin_5_dp">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_spinning_wheel_close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
         </LinearLayout>
 
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_try_it"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

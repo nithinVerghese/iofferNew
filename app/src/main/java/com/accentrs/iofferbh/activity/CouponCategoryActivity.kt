@@ -2,10 +2,10 @@ package com.accentrs.iofferbh.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.annotation.NonNull
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.GridLayoutManager
+import androidx.annotation.NonNull
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View

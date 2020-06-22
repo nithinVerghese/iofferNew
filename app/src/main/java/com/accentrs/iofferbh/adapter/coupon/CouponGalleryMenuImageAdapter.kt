@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import androidx.viewpager.widget.PagerAdapter
 import com.accentrs.apilibrary.utils.Constants
 import com.accentrs.iofferbh.R
 import com.accentrs.iofferbh.helper.GlideApp
@@ -18,7 +19,7 @@ import com.bumptech.glide.request.transition.Transition
 
 class CouponGalleryMenuImageAdapter(/*private val couponGalleryActivity: CouponGalleryActivity,*/
         private val mContext: Context, private val arrayList: Array<String>?
-        /*, private val imageViewHdStatus: Boolean*/) : android.support.v4.view.PagerAdapter() {
+        /*, private val imageViewHdStatus: Boolean*/) : PagerAdapter() {
     private val layoutInflater: LayoutInflater
     private val bitmap: Bitmap? = null
 

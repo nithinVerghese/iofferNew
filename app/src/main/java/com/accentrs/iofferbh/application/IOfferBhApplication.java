@@ -7,10 +7,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.multidex.MultiDex;
-import android.util.Log;
+import androidx.multidex.MultiDex;
 
-import com.accentrs.iofferbh.utils.Constants;
 import com.accentrs.iofferbh.utils.SharedPreferencesData;
 import com.crashlytics.android.Crashlytics;
 

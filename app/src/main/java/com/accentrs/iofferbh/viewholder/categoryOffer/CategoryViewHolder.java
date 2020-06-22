@@ -1,6 +1,6 @@
 package com.accentrs.iofferbh.viewholder.categoryOffer;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.accentrs.iofferbh.R;
