@@ -563,6 +563,7 @@ public class HomeScreenActivity extends DrawerActivity implements FragmentDrawer
         mResult.setOnResultsCallBack(new Results.ResultsCallBack() {
             @Override
             public void onSuccess(ResponseType response) {
+
                 companyOfferModel = new Gson().fromJson(response.getStringResponse().toString(), HomeScreenModel.class);
 
                 if (PAGE_COUNT > 1) {

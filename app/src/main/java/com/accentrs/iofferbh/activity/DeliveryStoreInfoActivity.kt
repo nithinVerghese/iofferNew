@@ -225,8 +225,8 @@ class DeliveryStoreInfoActivity : BaseActivity() {
     }
 
     private fun whatsappData(){
-        whatsappArr = whatsapp.split(",").toTypedArray()
-        whatsappArr_num = whatsapp_num.split(",").toTypedArray()
+        whatsappArr = whatsapp.split("|").toTypedArray()
+        whatsappArr_num = whatsapp_num.split("|").toTypedArray()
         for ((index, value) in whatsappArr.withIndex()) {
             val adaptor:WhatsappDataAdaptor = WhatsappDataAdaptor(whatsappArr.get(index), whatsappArr_num.get(index))
             dataAdaptors.add(adaptor)
@@ -234,8 +234,8 @@ class DeliveryStoreInfoActivity : BaseActivity() {
     }
 
     private fun phoneData(){
-        phoneArr = phone.split(",").toTypedArray()
-        phoneArr_num = phone_num.split(",").toTypedArray()
+        phoneArr = phone.split("|").toTypedArray()
+        phoneArr_num = phone_num.split("|").toTypedArray()
         for ((index, value) in whatsappArr.withIndex()) {
             val adaptor:PhoneDataAdaptor = PhoneDataAdaptor(phoneArr.get(index), phoneArr_num.get(index))
             phoneAdaptors.add(adaptor)
@@ -243,8 +243,8 @@ class DeliveryStoreInfoActivity : BaseActivity() {
     }
 
     private fun onlineData(){
-        onlineArr = online.split(",").toTypedArray()
-        onlineArr_num = online_num.split(",").toTypedArray()
+        onlineArr = online.split("|").toTypedArray()
+        onlineArr_num = online_num.split("|").toTypedArray()
         for ((index, value) in onlineArr.withIndex()) {
             val adaptor:OnlineDataAdaptor = OnlineDataAdaptor(onlineArr.get(index), onlineArr_num.get(index))
             onlineAdaptor.add(adaptor)

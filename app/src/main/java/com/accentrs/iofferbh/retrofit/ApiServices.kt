@@ -52,4 +52,10 @@ interface ApiServices {
 
     @GET("dshopinfo")
     fun dshopinfo(@Header("shop") category:String ): Call<List <StoreInfo>>
+
+    @GET("dshoplocationcor")
+    fun dshoplocation(@Header("category") category:String ,
+                      @Header("latitude") latitude:String ,
+                      @Header("longitude") longitude:String): Call<List <Store>>
+
 }
