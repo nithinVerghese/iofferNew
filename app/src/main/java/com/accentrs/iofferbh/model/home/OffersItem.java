@@ -3,6 +3,7 @@ package com.accentrs.iofferbh.model.home;
 import java.io.Serializable;
 import java.util.List;
 
+import com.accentrs.iofferbh.model.companydetail.Company;
 import com.google.gson.annotations.SerializedName;
 
 
@@ -17,6 +18,9 @@ public class OffersItem implements Serializable{
 
 	@SerializedName("offer_images")
 	private List<OfferImagesItem> offerImages;
+
+	@SerializedName("company")
+	private List<Company> company;
 
 	@SerializedName("company_id")
 	private String companyId;
@@ -191,6 +195,14 @@ public class OffersItem implements Serializable{
 
 	public void setCompanyNameAr(String companyNameAr) {
 		this.companyNameAr = companyNameAr;
+	}
+
+	public List<Company> getCompany() {
+		return company;
+	}
+
+	public void setCompany(List<Company> company) {
+		this.company = company;
 	}
 
 	@Override

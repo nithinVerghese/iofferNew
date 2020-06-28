@@ -14,6 +14,7 @@ public class CompanyDetailHeaderViewHolder extends MainViewHolder {
     public ImageView ivCompanyBanner;
     public ImageView ivCompany;
 
+    public LinearLayout llCompanyDelivery;
     public LinearLayout llCompanyCall;
     public LinearLayout llCompanyLocation;
     public LinearLayout llCompanyWebsite;
@@ -32,6 +33,7 @@ public class CompanyDetailHeaderViewHolder extends MainViewHolder {
         ivCompanyBanner = itemView.findViewById(R.id.ic_company_banner);
         ivCompany = itemView.findViewById(R.id.iv_company_image);
         llCompanyCall = itemView.findViewById(R.id.ll_company_call);
+        llCompanyDelivery = itemView.findViewById(R.id.ll_company_delivery);
         llCompanyLocation = itemView.findViewById(R.id.ll_company_location);
         llCompanyWebsite = itemView.findViewById(R.id.ll_company_website);
         llCompanyWishlist = itemView.findViewById(R.id.ll_offer_wishlist);

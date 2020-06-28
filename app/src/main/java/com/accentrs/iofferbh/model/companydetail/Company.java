@@ -11,6 +11,9 @@ public class Company implements Serializable {
 	@SerializedName("website")
 	private String website;
 
+	@SerializedName("delievery_status")
+	private String delieveryStatus;
+
 	@SerializedName("name_ar")
 	private String nameAr;
 
@@ -116,6 +119,14 @@ public class Company implements Serializable {
 
 	public Object getDescriptionAr(){
 		return descriptionAr;
+	}
+
+	public String getDelieveryStatus() {
+		return delieveryStatus;
+	}
+
+	public void setDelieveryStatus(String delieveryStatus) {
+		this.delieveryStatus = delieveryStatus;
 	}
 
 	@Override

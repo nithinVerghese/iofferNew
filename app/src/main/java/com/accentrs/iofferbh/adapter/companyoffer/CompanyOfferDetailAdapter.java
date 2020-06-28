@@ -22,6 +22,7 @@ import com.accentrs.iofferbh.activity.OfferDetailActivity;
 import com.accentrs.iofferbh.activity.OfferGalleryActivity;
 import com.accentrs.iofferbh.activity.multiClickDissable;
 import com.accentrs.iofferbh.helper.GlideApp;
+import com.accentrs.iofferbh.model.companydetail.Company;
 import com.accentrs.iofferbh.model.home.OffersItem;
 import com.accentrs.iofferbh.utils.Utils;
 import com.accentrs.iofferbh.viewholder.offerdetail.CompanyOfferDetailViewHolder;

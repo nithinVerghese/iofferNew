@@ -132,6 +132,7 @@
 
     <string name="click_on_the_logo_to_see_the_prizes_you_may_win_this_month">"Click on the logo to see the prizes you may win this month!"</string>
     <string name="click_on_the_logo_to_see_the_prizes_you_may_win_this_month_ar">"إضغط على الشعار لترى الجوائز المقدمة"</string>
+    <string name="offer_detail_delivery_text">توصيل</string>
 
 
 </resources>

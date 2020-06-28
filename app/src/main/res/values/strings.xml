@@ -109,6 +109,8 @@
     //Offer detail screen text
     <string name="offer_detail_contact_text">"Contact"</string>
     <string name="offer_detail_call_text">"Call"</string>
+    <string name="offer_detail_delivery_text">"Delivery"</string>
+
     <string name="offer_detail_website_text">"Website "</string>
     <string name="offer_detail_location_text">"Location"</string>
 

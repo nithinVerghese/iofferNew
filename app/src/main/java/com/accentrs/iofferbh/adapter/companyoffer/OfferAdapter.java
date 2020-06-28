@@ -7,25 +7,27 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AlertDialog;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.accentrs.apilibrary.utils.Constants;
 import com.accentrs.iofferbh.R;
+import com.accentrs.iofferbh.activity.DeliveryCompanyInfo;
 import com.accentrs.iofferbh.activity.OfferDetailActivity;
 import com.accentrs.iofferbh.application.IOfferBhApplication;
 import com.accentrs.iofferbh.fragment.LocationFragment;
 import com.accentrs.iofferbh.helper.GlideApp;
+import com.accentrs.iofferbh.model.companydetail.Company;
 import com.accentrs.iofferbh.model.companydetail.CompanyDetailModel;
-
 import com.accentrs.iofferbh.model.companydetail.LocationsItem;
 import com.accentrs.iofferbh.model.home.OffersItem;
 import com.accentrs.iofferbh.service.WishlistService;
@@ -35,6 +37,7 @@ import com.accentrs.iofferbh.viewholder.MainViewHolder;
 import com.accentrs.iofferbh.viewholder.offerdetail.CompanyDetailHeaderViewHolder;
 import com.accentrs.iofferbh.viewholder.offerdetail.CompanyOfferImageListViewHolder;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,24 +51,35 @@ import static com.accentrs.iofferbh.service.WishlistService.WISHLIST_RESULT;
 
 public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
-    private Context mContext;
-    private OffersItem offersItem;
-    private CompanyDetailModel companyDetailModel;
-
     private final static int OFFER_HEADER_VIEW_TYPE = 10;
     private final static int OFFER_IMAGE_VIEW_TYPE = 15;
-
+    private Context mContext;
+    private OffersItem offersItem;
+    //private String dStatus = "No";
+    private String delivery;
+    private CompanyDetailModel companyDetailModel;
+    private Company company;
     private View view;
     private HashMap<String, String> bookmarksItemHashMap;
 
-    public OfferAdapter(Context mContext, OffersItem offersItem) {
+    public OfferAdapter(Context mContext, OffersItem offersItem,String delivery) {
+//    public OfferAdapter(Context mContext, OffersItem offersItem) {
         this.mContext = mContext;
         this.offersItem = offersItem;
+        this.delivery = delivery;
+
+        //Toast.makeText(mContext, "res: "+companyDetailModel.getCompany().getWebsite(), Toast.LENGTH_SHORT).show();
         bookmarksItemHashMap = ((IOfferBhApplication) mContext.getApplicationContext()).getBookmarksItemHashMap();
     }
 
     @Override
     public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+//        company = companyDetailModel.getCompany();
+//        String De = company.getDelieveryStatus();
+//        dStatus = De;
+        //Toast.makeText(mContext, "ss: "+dStatus, Toast.LENGTH_SHORT).show();
+
 
         if (viewType == OFFER_HEADER_VIEW_TYPE) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_company_offer_detail_header_layout_v1, parent, false);
@@ -80,12 +94,35 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
     @Override
     public void onBindViewHolder(MainViewHolder holder, int position) {
 
+        //Toast.makeText(mContext, "ss" + delivery, Toast.LENGTH_SHORT).show();
 
         switch (holder.getItemViewType()) {
 
             case OFFER_HEADER_VIEW_TYPE:
 
+
                 CompanyDetailHeaderViewHolder companyDetailHeaderViewHolder = (CompanyDetailHeaderViewHolder) holder;
+
+                if(delivery.equals("Yes")){
+                    companyDetailHeaderViewHolder.llCompanyDelivery.setVisibility(View.VISIBLE);
+
+                }else {
+                    companyDetailHeaderViewHolder.llCompanyDelivery.setVisibility(View.INVISIBLE);
+
+                }
+
+                companyDetailHeaderViewHolder.llCompanyDelivery.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(mContext, DeliveryCompanyInfo.class);
+                        intent.putExtra("s_id",offersItem.getCompanyId());
+                        mContext.startActivity(intent);
+
+                        //Toast.makeText(mContext, "ss: "+offersItem.getCompanyId(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
 
                 if (bookmarksItemHashMap.containsKey(offersItem.getId())) {
                     companyDetailHeaderViewHolder.ivBookmark.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_offer_wishlist_selected));
@@ -107,8 +144,13 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
                 }
 
 //                setOfferDate(offersItem,companyDetailHeaderViewHolder);
+                //String de =  companyDetailModel.getCategoryId();
 
-
+//                if (de.equals("Yes")){
+//                    companyDetailHeaderViewHolder.llCompanyDelivery.setVisibility(View.VISIBLE);
+//                }else {
+//                    companyDetailHeaderViewHolder.llCompanyDelivery.setVisibility(View.INVISIBLE);
+//                }
 
 
                 if (companyDetailModel != null) {
@@ -118,7 +160,7 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
                         @Override
                         public void onClick(View view) {
 
-                            if(companyDetailModel != null){
+                            if (companyDetailModel != null) {
                                 String contactNumber = companyDetailModel.getCompany().getContactNumber();
                                 if (contactNumber != null) {
                                     setCompanyCallActionData(contactNumber);
@@ -127,7 +169,7 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
                                 }
 
                             }
-                            
+
                         }
                     });
 
@@ -135,15 +177,15 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
                         @Override
                         public void onClick(View view) {
 
-                            if(companyDetailModel != null){
-                                if(companyDetailModel.getCompany() != null && companyDetailModel.getCompany().getLocations() != null){
+                            if (companyDetailModel != null) {
+                                if (companyDetailModel.getCompany() != null && companyDetailModel.getCompany().getLocations() != null) {
                                     ArrayList<LocationsItem> locationsItems = new ArrayList<>(companyDetailModel.getCompany().getLocations());
-                                    if(locationsItems.size() > 0 ){
+                                    if (locationsItems.size() > 0) {
                                         callLocationFragment(locationsItems);
-                                    }else{
+                                    } else {
                                         showDataNotFoundDialog("No Location found");
                                     }
-                                }else{
+                                } else {
                                     showDataNotFoundDialog("No Location found");
                                 }
 
@@ -159,7 +201,7 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
                         public void onClick(View view) {
 
 
-                            if(companyDetailModel != null){
+                            if (companyDetailModel != null) {
                                 String companyWebsite = companyDetailModel.getCompany().getWebsite();
                                 if (companyWebsite != null) {
                                     setCompanyWebsiteData(companyWebsite);
@@ -218,7 +260,6 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
                 CompanyOfferImageListViewHolder listViewHolder = (CompanyOfferImageListViewHolder) holder;
                 setOfferImageAdapter(listViewHolder);
-
                 break;
 
 
@@ -231,6 +272,7 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
         holder.rvOfferImage.setLayoutManager(new LinearLayoutManager(mContext));
         CompanyOfferDetailAdapter companyOfferDetailAdapter = new CompanyOfferDetailAdapter(mContext, offersItem);
         holder.rvOfferImage.setAdapter(companyOfferDetailAdapter);
+
 
     }
 
@@ -285,7 +327,7 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
 
     private void showSnackbar(String message) {
-        if(view != null){
+        if (view != null) {
             Snackbar.make(view, message, Snackbar.LENGTH_LONG).show();
         }
 
@@ -298,11 +340,11 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
                 arg0.dismiss();
             }
         };
-        showAlertDialog(message,"Ok", onClickListener, true);
+        showAlertDialog(message, "Ok", onClickListener, true);
 
     }
 
-    private void showAlertDialog(String message,String clickButtonText,DialogInterface.OnClickListener onClickListener, boolean isCancellable) {
+    private void showAlertDialog(String message, String clickButtonText, DialogInterface.OnClickListener onClickListener, boolean isCancellable) {
 
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
         alertDialogBuilder.setMessage(message);
@@ -356,6 +398,32 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
     }
 
+    private void addBookmarkData() {
+
+        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) mContext.getApplicationContext()).getBookmarksItemHashMap();
+        bookmarkHashmap.put(offersItem.getId(), offersItem.getNameEn());
+        ((IOfferBhApplication) mContext.getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
+    }
+
+    private void removeBookmarkData() {
+        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) mContext.getApplicationContext()).getBookmarksItemHashMap();
+        if (bookmarkHashmap != null && bookmarkHashmap.size() == 0)
+            return;
+
+        if (bookmarkHashmap != null) {
+            bookmarkHashmap.remove(offersItem.getId());
+            ((IOfferBhApplication) mContext.getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
+        }
+    }
+
+    private void callLocationFragment(ArrayList<LocationsItem> locationsItems) {
+        LocationFragment fragment = new LocationFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Constants.LOCATION_KEY, locationsItems);
+        fragment.setArguments(bundle);
+        fragment.show(((OfferDetailActivity) mContext).getSupportFragmentManager(), LocationFragment.TAG);
+
+    }
 
     private class WishlistReceiver extends ResultReceiver {
 
@@ -398,33 +466,5 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
             }
         }
-    }
-
-
-    private void addBookmarkData() {
-
-        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) mContext.getApplicationContext()).getBookmarksItemHashMap();
-        bookmarkHashmap.put(offersItem.getId(), offersItem.getNameEn());
-        ((IOfferBhApplication) mContext.getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
-    }
-
-    private void removeBookmarkData() {
-        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) mContext.getApplicationContext()).getBookmarksItemHashMap();
-        if (bookmarkHashmap != null && bookmarkHashmap.size() == 0)
-            return;
-
-        if (bookmarkHashmap != null) {
-            bookmarkHashmap.remove(offersItem.getId());
-            ((IOfferBhApplication) mContext.getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
-        }
-    }
-
-    private void callLocationFragment(ArrayList<LocationsItem> locationsItems){
-        LocationFragment fragment = new LocationFragment();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(Constants.LOCATION_KEY, locationsItems);
-        fragment.setArguments(bundle);
-        fragment.show(((OfferDetailActivity) mContext).getSupportFragmentManager(), LocationFragment.TAG);
-
     }
 }

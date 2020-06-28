@@ -121,6 +121,7 @@ public class Results extends VolleyClass {
             @Override
             public void onErrorResponse(VolleyError error) {
 
+                String s = error.getMessage();
 
             }
         }) {

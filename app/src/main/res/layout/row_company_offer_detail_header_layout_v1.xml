@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white">
@@ -52,6 +53,33 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_company_delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10_dp"
+                        android:layout_marginRight="@dimen/margin_10_dp"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:srcCompat="@drawable/delivery_round" />
+
+                        <com.accentrs.iofferbh.view.OpenSansRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_2_dp"
+                            android:text="@string/offer_detail_delivery_text"
+                            android:textColor="#000000"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+
 
                     <LinearLayout
                         android:id="@+id/ll_company_call"

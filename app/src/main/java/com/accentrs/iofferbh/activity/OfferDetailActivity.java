@@ -4,19 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.accentrs.apilibrary.callback.Results;
 import com.accentrs.apilibrary.interfaces.ResponseType;
 import com.accentrs.apilibrary.utils.Constants;
 import com.accentrs.apilibrary.utils.SessionSharedPreference;
 import com.accentrs.iofferbh.R;
+import com.accentrs.iofferbh.adapter.companyoffer.CompanyOfferDetailAdapter;
 import com.accentrs.iofferbh.adapter.companyoffer.OfferAdapter;
 import com.accentrs.iofferbh.application.IOfferBhApplication;
 import com.accentrs.iofferbh.model.companydetail.CompanyDetailModel;
@@ -38,19 +41,21 @@ public class OfferDetailActivity extends BaseActivity {
 
     private RecyclerView rvOfferDetail;
     private LinearLayoutManager mLayoutManager;
+    //private LinearLayout llCompanyDelivery;
 
     private RelativeLayout rlProgress;
     private ProgressBar pbHome;
     private CompanyDetailModel companyModel;
 
     private OfferAdapter companyOfferDetailAdapter;
+    private CompanyOfferDetailAdapter companyDetailAdapter;
     private OffersItem offersItem;
-
     private boolean offerWishlistStatus;
     private boolean currentWishlistStatus;
 
-    private HashMap<String, String> bookmarksItemHashMap;
+    private String Delivery = "No";
 
+    private HashMap<String, String> bookmarksItemHashMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +80,8 @@ public class OfferDetailActivity extends BaseActivity {
 
     }
 
-
     private void setFavOfferImageDataWithStatus() {
+
 
         if (bookmarksItemHashMap.containsKey(offersItem.getId())) {
             offerWishlistStatus = true;
@@ -101,16 +106,16 @@ public class OfferDetailActivity extends BaseActivity {
         }
     }
 
-
     public void fetchIntentData() {
         if (getIntent().getExtras() != null) {
             Bundle bundle = getIntent().getExtras();
             offersItem = (OffersItem) bundle.getSerializable(Constants.OFFER_DATA_KEY);
             initializeToolbar();
+            //
             fetchFavOfferData();
             setFavOfferImageDataWithStatus();
             hitUserOfferViewApi();
-            setOfferDetailAdapter();
+       //     setOfferDetailAdapter();
             fetchCompanyDetail();
         }
 
@@ -124,6 +129,7 @@ public class OfferDetailActivity extends BaseActivity {
 
         rvOfferDetail.setLayoutManager(linearLayoutManager);
 
+        //llCompanyDelivery = findViewById(R.id.ll_company_delivery);
         rlProgress = findViewById(R.id.rl_home_progress);
         pbHome = findViewById(R.id.pb_home);
     }
@@ -142,6 +148,8 @@ public class OfferDetailActivity extends BaseActivity {
             public void onSuccess(ResponseType response) {
 //                hideHomeProgress();
                 companyModel = new Gson().fromJson(response.getStringResponse().toString(), CompanyDetailModel.class);
+                Delivery = companyModel.getCompany().getDelieveryStatus();
+                setOfferDetailAdapter(Delivery);
                 setCompanyDetailData();
 
             }
@@ -149,36 +157,38 @@ public class OfferDetailActivity extends BaseActivity {
             @Override
             public void onError(String error) {
 //                hideHomeProgress();
+                setOfferDetailAdapter(Delivery);
             }
         });
-
     }
 
-
-    private void setOfferDetailAdapter() {
-        companyOfferDetailAdapter = new OfferAdapter(this, offersItem);
+    private void setOfferDetailAdapter(String delivery_statis) {
+        Toast.makeText(this, "ss: "+delivery_statis, Toast.LENGTH_SHORT).show();
+        //companyModel.getCompany().getWebsite();
+        companyOfferDetailAdapter = new OfferAdapter(this, offersItem,delivery_statis);
+        //companyDetailAdapter = new CompanyOfferDetailAdapter(this,)
         rvOfferDetail.setAdapter(companyOfferDetailAdapter);
     }
-
 
     private void showHomeProgress() {
         rlProgress.setVisibility(View.VISIBLE);
         pbHome.setVisibility(View.VISIBLE);
     }
 
-
     private void hideHomeProgress() {
         rlProgress.setVisibility(View.GONE);
         pbHome.setVisibility(View.GONE);
     }
 
-
     private void setCompanyDetailData() {
         if (companyOfferDetailAdapter != null) {
             companyOfferDetailAdapter.addCompanyOfferDetail(companyModel);
+
+            //Toast.makeText(this, "S: "+Delivery, Toast.LENGTH_SHORT).show();
+
+
         }
     }
-
 
     private void hitUserOfferViewApi() {
         String userId = new SessionSharedPreference(getApplicationContext()).getUserId();
@@ -203,7 +213,6 @@ public class OfferDetailActivity extends BaseActivity {
 
 
     }
-
 
     private JSONObject createOfferViewJsonObject() {
 
@@ -253,7 +262,6 @@ public class OfferDetailActivity extends BaseActivity {
         }
     }
 
-
     private void addToWishlist(String offerId) {
         String userDeviceId = new SharedPreferencesData(this).getUserId();
         if (TextUtils.isEmpty(userDeviceId)) {
@@ -271,6 +279,61 @@ public class OfferDetailActivity extends BaseActivity {
 
     }
 
+    private void addBookmarkData() {
+
+        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) getApplicationContext()).getBookmarksItemHashMap();
+        bookmarkHashmap.put(offersItem.getId(), offersItem.getNameEn());
+        ((IOfferBhApplication) getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
+    }
+
+    private void removeBookmarkData() {
+        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) getApplicationContext()).getBookmarksItemHashMap();
+        if (bookmarkHashmap != null && bookmarkHashmap.size() == 0)
+            return;
+
+        if (bookmarkHashmap != null) {
+            bookmarkHashmap.remove(offersItem.getId());
+            ((IOfferBhApplication) getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
+
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishActvitiy();
+    }
+
+    private void finishActvitiy() {
+        if (com.accentrs.iofferbh.utils.Constants.IS_FROM_DEEPLINK) {
+            com.accentrs.iofferbh.utils.Constants.IS_FROM_DEEPLINK = false;
+            goToHomeScreenActivity();
+        } else {
+            goBack();
+        }
+
+    }
+
+    private void goToHomeScreenActivity() {
+        Intent mHomeScreenActivity = new Intent(this, HomeScreenActivity.class);
+        mHomeScreenActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mHomeScreenActivity);
+        finish();
+    }
+
+    private void goBack() {
+        Intent intent = getIntent();
+
+
+        if (currentWishlistStatus == offerWishlistStatus) {
+            setResult(RESULT_OK, intent);
+
+        } else {
+            setResult(RESULT_CANCELED, intent);
+
+        }
+        finish();
+    }
 
     private class WishlistReceiver extends ResultReceiver {
 
@@ -312,65 +375,6 @@ public class OfferDetailActivity extends BaseActivity {
             }
         }
     }
-
-
-    private void addBookmarkData() {
-
-        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) getApplicationContext()).getBookmarksItemHashMap();
-        bookmarkHashmap.put(offersItem.getId(), offersItem.getNameEn());
-        ((IOfferBhApplication) getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
-    }
-
-    private void removeBookmarkData() {
-        HashMap<String, String> bookmarkHashmap = ((IOfferBhApplication) getApplicationContext()).getBookmarksItemHashMap();
-        if (bookmarkHashmap != null && bookmarkHashmap.size() == 0)
-            return;
-
-        if (bookmarkHashmap != null) {
-            bookmarkHashmap.remove(offersItem.getId());
-            ((IOfferBhApplication) getApplicationContext()).setUserBookmarkList(bookmarkHashmap);
-
-        }
-
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        finishActvitiy();
-    }
-
-    private void finishActvitiy() {
-        if (com.accentrs.iofferbh.utils.Constants.IS_FROM_DEEPLINK) {
-            com.accentrs.iofferbh.utils.Constants.IS_FROM_DEEPLINK = false;
-            goToHomeScreenActivity();
-        } else {
-            goBack();
-        }
-
-    }
-
-    private void goToHomeScreenActivity() {
-        Intent mHomeScreenActivity = new Intent(this, HomeScreenActivity.class);
-        mHomeScreenActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mHomeScreenActivity);
-        finish();
-    }
-
-    private void goBack() {
-        Intent intent = getIntent();
-
-
-        if (currentWishlistStatus == offerWishlistStatus) {
-            setResult(RESULT_OK, intent);
-
-        } else {
-            setResult(RESULT_CANCELED, intent);
-
-        }
-        finish();
-    }
-
 
 }
 

@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.accentrs.iofferbh">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:name=".application.IOfferBhApplication"
         android:allowBackup="true"
@@ -13,7 +11,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DeliveryStoreInfoActivity"></activity>
+        <activity android:name=".activity.DeliveryCompanyInfo"></activity>
+        <activity android:name=".activity.DeliveryStoreInfoActivity" />
         <activity android:name=".activity.dummy" />
         <activity android:name=".activity.Coupon_search_new" />
         <activity android:name=".activity.SearchCouponActivity" />
@@ -200,6 +199,8 @@
     <meta-data
         android:name="firebase_crashlytics_collection_enabled"
         android:value="false" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

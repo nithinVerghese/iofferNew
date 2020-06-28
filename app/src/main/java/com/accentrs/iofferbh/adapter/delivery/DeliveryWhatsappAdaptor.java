@@ -2,6 +2,7 @@ package com.accentrs.iofferbh.adapter.delivery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.accentrs.iofferbh.R;
@@ -44,10 +46,23 @@ public class DeliveryWhatsappAdaptor extends RecyclerView.Adapter<DeliveryWhatsa
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("smsto:"+modelList.get(position).getKey());
-                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-                i.setPackage("com.whatsapp");
-                context.startActivity(i);
+
+                boolean installed = appInstalledOrNot("com.whatsapp");
+                if(installed) {
+                    Uri uri = Uri.parse("smsto:"+modelList.get(position).getKey());
+                    Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+                    i.setPackage("com.whatsapp");
+                    context.startActivity(i);
+                } else {
+
+                    Toast.makeText(context, "Whatsapp is not installed ", Toast.LENGTH_SHORT).show();
+                    //System.out.println("App is not currently installed on your phone");
+                }
+
+//                Uri uri = Uri.parse("smsto:"+modelList.get(position).getKey());
+//                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+//                i.setPackage("com.whatsapp");
+//                context.startActivity(i);
             }
         });
     }
@@ -71,4 +86,18 @@ public class DeliveryWhatsappAdaptor extends RecyclerView.Adapter<DeliveryWhatsa
 
         }
     }
+
+    private boolean appInstalledOrNot(String uri) {
+        PackageManager pm = context.getPackageManager();
+        boolean app_installed;
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        }
+        catch (PackageManager.NameNotFoundException e) {
+            app_installed = false;
+        }
+        return app_installed;
+    }
+
 }
