@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
@@ -9,74 +12,86 @@
         android:id="@+id/iv_back_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/margin_12_dp"
-        android:layout_marginStart="@dimen/margin_12_dp"
-        android:src="@drawable/ic_arrow_back" />
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/iv_app_logo"
+        android:layout_width="136dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="23dp"
+        android:src="@drawable/ic_offerbh_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toEndOf="@+id/iv_back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_share_delivery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_marginEnd="8dp"
         android:gravity="end"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/iv_share_offer"
-        android:layout_toLeftOf="@+id/iv_share_offer"
+        android:src="@drawable/delivery_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_share_offer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_share_offer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingEnd="@dimen/margin_10_dp"
+        android:paddingRight="@dimen/margin_20_dp"
+        android:src="@drawable/ic_share_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/bg_category_text"
-        >
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_share_delivery"
+        app:layout_constraintStart_toEndOf="@+id/iv_app_logo"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.accentrs.iofferbh.view.OpenSansBoldTextView
             android:id="@+id/tv_view_all_in_hd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
 
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
             android:text="@string/all_in_hd_text"
             android:textColor="@color/white"
             android:textSize="9sp" />
     </LinearLayout>
 
 
-
     <com.accentrs.iofferbh.view.OpenSansSemiBoldTextView
+        android:id="@+id/openSansSemiBoldTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/iv_share_offer"
-        android:layout_toLeftOf="@+id/iv_share_offer"
-        android:visibility="gone"
         android:text="@string/all_in_hd_text"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/iv_app_logo"
-        android:layout_width="120dp"
-        android:layout_height="56dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/margin_15_dp"
-        android:layout_marginStart="@dimen/margin_15_dp"
-        android:layout_toEndOf="@+id/iv_back_arrow"
-        android:layout_toRightOf="@+id/iv_back_arrow"
-        android:src="@drawable/ic_offerbh_header" />
-
-    <ImageView
-        android:id="@+id/iv_share_offer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:paddingEnd="@dimen/margin_20_dp"
-        android:paddingLeft="@dimen/margin_20_dp"
-        android:paddingRight="@dimen/margin_20_dp"
-        android:paddingStart="@dimen/margin_20_dp"
-        android:src="@drawable/ic_share_white" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

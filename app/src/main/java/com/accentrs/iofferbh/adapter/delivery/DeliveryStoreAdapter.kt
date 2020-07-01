@@ -36,7 +36,7 @@ class DeliveryStoreAdapter(val context: Context, val couponStoreItemList: List<S
     override fun onBindViewHolder(holder: DeliveryStoreViewHolder, position: Int) {
 
 
-        holder.tvDeliveryStoreTitle.text = couponStoreItemList?.get(position)?.getShopName()
+        holder.tvDeliveryStoreTitle.text = couponStoreItemList?.get(position)?.getNameEn()
 
 
 

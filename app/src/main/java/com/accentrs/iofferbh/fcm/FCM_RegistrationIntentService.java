@@ -53,6 +53,7 @@ public class FCM_RegistrationIntentService extends IntentService {
 
         @Override
         public boolean isTaskSuccessful() {
+
             return mTokenGeneratedSuccessfully;
         }
 

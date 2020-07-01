@@ -163,7 +163,7 @@ public class OfferDetailActivity extends BaseActivity {
     }
 
     private void setOfferDetailAdapter(String delivery_statis) {
-        Toast.makeText(this, "ss: "+delivery_statis, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "ss: "+delivery_statis, Toast.LENGTH_SHORT).show();
         //companyModel.getCompany().getWebsite();
         companyOfferDetailAdapter = new OfferAdapter(this, offersItem,delivery_statis);
         //companyDetailAdapter = new CompanyOfferDetailAdapter(this,)

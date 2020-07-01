@@ -1,5 +1,6 @@
 package com.accentrs.iofferbh.activity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.accentrs.apilibrary.utils.Constants;
 import com.accentrs.iofferbh.R;
@@ -45,6 +47,7 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
     private View toolbarView;
     private ImageView ivBackIcon;
     private ImageView ivShareIcon;
+    private ImageView ivShareDelivery;
     private TextView tvViewAllInHd;
 
 
@@ -85,6 +88,7 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
         ivBackIcon.setOnClickListener(this);
         ivShareIcon.setOnClickListener(this);
         tvViewAllInHd.setOnClickListener(this);
+        ivShareDelivery.setOnClickListener(this);
     }
 
     protected void configureToolBar() {
@@ -96,6 +100,7 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
         toolbarView = layoutInflater.inflate(R.layout.gallery_toolbar_layout, null);
         ivBackIcon = (ImageView) toolbarView.findViewById(R.id.iv_back_arrow);
         ivShareIcon = (ImageView) toolbarView.findViewById(R.id.iv_share_offer);
+        ivShareDelivery = (ImageView) toolbarView.findViewById(R.id.iv_share_delivery);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowHomeEnabled(false);
@@ -203,6 +208,10 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
                 downloadImage();
                 break;
 
+            case R.id.iv_share_delivery:
+                ivShareDelivery();
+                break;
+
             case R.id.iv_back_arrow:
                 onBackPressed();
                 break;
@@ -213,6 +222,56 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
                 break;
 
         }
+    }
+
+    private void ivShareDelivery(){
+        showProgressDialog(getString(R.string.msg_loading));
+        Glide.with(this)
+                .asBitmap()
+                .load(com.accentrs.apilibrary.utils.Constants.BASE_URL.concat(offersItem.getOfferImages().get(position).getUrl()))
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(@NonNull Bitmap newBitmap, @Nullable Transition<? super Bitmap> transition) {
+                        String filesDir = getExternalFilesDir(null)+File.separator+"Image";
+                        File dir = new File(filesDir);
+                        if (!dir.exists()) {
+                            dir.mkdirs();
+                        }
+                        File storeFile = new File(dir,"image1.jpg");
+                        storeFile.deleteOnExit();
+                        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                        newBitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+                        try {
+                            storeFile.createNewFile();
+                            FileOutputStream fo = new FileOutputStream(storeFile);
+                            fo.write(bytes.toByteArray());
+                            fo.close();
+                            bytes.close();
+                            dismissProgressDialog();
+                           // shareOffer(storeFile.getPath());
+                            Toast.makeText(OfferGalleryActivity.this, "path: "+storeFile.getPath(), Toast.LENGTH_SHORT).show();
+                            Uri imgUri = Uri.parse(storeFile.getPath());
+                            Uri uri = Uri.parse("smsto:"+"39329660");
+                            Intent whatsappIntent = new Intent(Intent.ACTION_SEND,uri);
+                            whatsappIntent.setType("text/plain");
+                            whatsappIntent.setPackage("com.whatsapp");
+                            whatsappIntent.putExtra(Intent.EXTRA_TEXT, "The text you wanted to share");
+                            whatsappIntent.putExtra(Intent.EXTRA_STREAM, imgUri);
+                            whatsappIntent.setType("image/jpeg");
+                            whatsappIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+                            try {
+                                startActivity(whatsappIntent);
+                            } catch (android.content.ActivityNotFoundException ex) {
+                                Toast.makeText(OfferGalleryActivity.this, "Whatsapp have not been installed. ", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+
     }
 
 
