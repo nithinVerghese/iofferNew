@@ -61,7 +61,7 @@ public class AdPopupCompanyOfferAdapter extends RecyclerView.Adapter<CompanyOffe
     @Override
     public void onBindViewHolder(final CompanyOfferViewHolder holder, int position) {
 
-        String companyUrl = Constants.BASE_URL + offersItemList.get(position).getCompanyLogo();
+        String companyUrl = Constants.BASE_URL1 + offersItemList.get(position).getCompanyLogo();
 
         String companyOfferName = offersItemList.get(position).getNameEn();
 //        String companyName = offersItemList.get(position).getC();
@@ -85,7 +85,7 @@ public class AdPopupCompanyOfferAdapter extends RecyclerView.Adapter<CompanyOffe
 
         if (offersItemList.get(position).getOfferImages() != null && offersItemList.get(position).getOfferImages().size() > 0) {
 
-            final String offerImage = Constants.BASE_URL + offersItemList.get(position).getOfferImages().get(0).getUrl();
+            final String offerImage = Constants.BASE_URL1 + offersItemList.get(position).getOfferImages().get(0).getUrl();
 
             SimpleTarget target = new SimpleTarget<Bitmap>() {
                 @Override

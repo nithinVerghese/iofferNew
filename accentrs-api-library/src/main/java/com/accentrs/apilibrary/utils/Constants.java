@@ -46,11 +46,11 @@ public class Constants {
     public static final String SEARCH_OFFER_URL = BASE_URL + "api/search?keyword=";
     public static final String GAME_WINNER_URL = BASE_URL + "api/spin-wheel-winners";
 
-    public static final String ADD_USER_GCM_DEVICE_URL = BASE_URL + "api/gcm";
+    public static final String ADD_USER_GCM_DEVICE_URL = BASE_URL1 + "api/gcm";
     public static final String USER_OFFER_VIEW_URL = BASE_URL + "api/offer-view";
     public static final String OFFER_SHARE_URL = BASE_URL + "share";
-    public static final String SPINNING_WHEEL_GAME_URL = BASE_URL + "api/spin-wheel";
-    public static final String ADS_POPUP_URL = BASE_URL + "api/ads-popup";
+    public static final String SPINNING_WHEEL_GAME_URL = BASE_URL1 + "api/spin-wheel";
+    public static final String ADS_POPUP_URL = BASE_URL1 + "api/ads-popup";
 
     public static final String COUPON_CATEGORY_URL = BASE_URL2 + "api/store_category";
 

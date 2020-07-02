@@ -270,7 +270,7 @@ public class OfferAdapter extends RecyclerView.Adapter<MainViewHolder> {
     private void setOfferImageAdapter(CompanyOfferImageListViewHolder holder) {
 //        GridLayoutManager mGridLayoutManager = new GridLayoutManager(mContext, 2);
         holder.rvOfferImage.setLayoutManager(new LinearLayoutManager(mContext));
-        CompanyOfferDetailAdapter companyOfferDetailAdapter = new CompanyOfferDetailAdapter(mContext, offersItem);
+        CompanyOfferDetailAdapter companyOfferDetailAdapter = new CompanyOfferDetailAdapter(mContext, offersItem,offersItem.getCompanyId(),delivery);
         holder.rvOfferImage.setAdapter(companyOfferDetailAdapter);
 
 

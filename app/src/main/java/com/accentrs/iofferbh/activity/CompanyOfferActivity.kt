@@ -138,7 +138,7 @@ class CompanyOfferActivity : BaseActivity() {
         showProgressDialog(getString(R.string.msg_loading))
         Glide.with(this)
                 .asBitmap()
-                .load(com.accentrs.apilibrary.utils.Constants.BASE_URL + offersItem.offerImages[0].url)
+                .load(com.accentrs.apilibrary.utils.Constants.BASE_URL1 + offersItem.offerImages[0].url)
                 .into<SimpleTarget<Bitmap>>(object : SimpleTarget<Bitmap>() {
                     override fun onResourceReady(newBitmap: Bitmap, transition: Transition<in Bitmap>?) {
                         val filesDir = getExternalFilesDir(null).toString() + File.separator + "Image"

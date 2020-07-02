@@ -40,11 +40,14 @@ public class CompanyOfferDetailAdapter extends RecyclerView.Adapter<CompanyOffer
     private View view;
     private OffersItem offersItem;
     private Context context;
+    private String sID,status;
     private long mLastClickTime = 0;
 
-    public CompanyOfferDetailAdapter(Context context, OffersItem offersItem) {
+    public CompanyOfferDetailAdapter(Context context, OffersItem offersItem,String sID,String status) {
         this.context = context;
         this.offersItem = offersItem;
+        this.sID = sID;
+        this.status = status;
     }
 
 
@@ -112,11 +115,11 @@ public class CompanyOfferDetailAdapter extends RecyclerView.Adapter<CompanyOffer
                     Bundle mBundle = new Bundle();
                     mBundle.putSerializable(Constants.OFFER_DATA_KEY, offersItem);
                     mBundle.putInt(Constants.OFFER_POSITION_KEY, holder.getAdapterPosition());
+                    intent.putExtra("status",status);
                     intent.putExtras(mBundle);
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         Pair<View, String> p1 = Pair.create((View) holder.ivCompanyOffer, context.getString(R.string.shared_offer_image_name));
-                        ActivityOptionsCompat options = ActivityOptionsCompat.
-                                makeSceneTransitionAnimation(((OfferDetailActivity) context), p1);
+                        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(((OfferDetailActivity) context), p1);
                         context.startActivity(intent, options.toBundle());
                     } else {
                         context.startActivity(intent);

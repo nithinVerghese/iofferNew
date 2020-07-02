@@ -28,9 +28,11 @@ import com.accentrs.iofferbh.adapter.company.CompanyAdapter;
 import com.accentrs.iofferbh.adapter.company.CompanyListOfferAdapter;
 import com.accentrs.iofferbh.adapter.company.CompanyOfferAdapter;
 import com.accentrs.iofferbh.helper.RecyclerItemClickListener;
+import com.accentrs.iofferbh.model.delivery.Dstatus;
 import com.accentrs.iofferbh.model.home.CompaniesItem;
 import com.accentrs.iofferbh.model.home.HomeScreenModel;
 import com.accentrs.iofferbh.model.home.OffersItem;
+import com.accentrs.iofferbh.retrofit.ApiServices;
 import com.accentrs.iofferbh.utils.Utils;
 import com.accentrs.iofferbh.viewholder.MainViewHolder;
 import com.accentrs.iofferbh.viewholder.home.HomeCategoryViewHolder;
@@ -50,6 +52,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+
+import static com.accentrs.iofferbh.retrofit.ServiceGenerator.createServiceDe;
 
 public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
@@ -297,6 +304,28 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
         }
 
+
+        ApiServices apiServices = createServiceDe().create(ApiServices.class);
+        Call<List <Dstatus>> call = apiServices.dstatus();
+        call.enqueue(new Callback<List<Dstatus>>() {
+            @Override
+            public void onResponse(Call<List<Dstatus>> call, retrofit2.Response<List<Dstatus>> response) {
+                List <Dstatus> status = response.body();
+
+                String stat = status.get(0).getOptionValue();
+                Log.d("statatat","nnn"+stat);
+
+                if(stat.equals("OFF")){
+                    viewHolder.ivDelivery.setVisibility(View.INVISIBLE);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Dstatus>> call, Throwable t) {
+
+            }
+        });
 
         //Log.e("coupon_123 ", homeScreenActivity.coupon_module);
 

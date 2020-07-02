@@ -2,6 +2,7 @@ package com.accentrs.iofferbh.retrofit
 
 import com.accentrs.iofferbh.model.coupon.*
 import com.accentrs.iofferbh.model.delivery.CategoryResponse
+import com.accentrs.iofferbh.model.delivery.Dstatus
 import com.accentrs.iofferbh.model.delivery.Store
 import com.accentrs.iofferbh.model.delivery.StoreInfo
 import com.google.gson.JsonArray
@@ -61,5 +62,8 @@ interface ApiServices {
 
     @GET("dshopinfodet")
     fun dshopinfodet(@Header("shop") category:String ): Call<List <StoreInfo>>
+
+    @GET("dstatus")
+    fun dstatus(): Call<List <Dstatus>>
 
 }

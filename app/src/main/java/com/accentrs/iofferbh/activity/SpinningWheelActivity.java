@@ -450,7 +450,7 @@ public class SpinningWheelActivity extends HeaderActivity implements RecyclerIte
         GlideApp.with(this)
                 .asBitmap()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .load(Constants.BASE_URL + spinningWheelPrizeImageUrl)
+                .load(Constants.BASE_URL1 + spinningWheelPrizeImageUrl)
                 .into(target);
 
         Log.d("cuppy",spinningWheelPrizeImageUrl);
