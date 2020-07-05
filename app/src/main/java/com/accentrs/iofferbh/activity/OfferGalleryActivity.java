@@ -49,6 +49,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -444,8 +445,10 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
     }
 
     private void whatsappData() {
-        whatsappArr = whatsapp.split(",");
-        whatsappArr_num = whatsapp_num.split(",");
+        whatsappArr = whatsapp.split(Pattern.quote("|"));
+        whatsappArr_num = whatsapp_num.split(Pattern.quote("|"));
+
+
         for (int i = 0; i < whatsappArr.length; i++) {
 
             WhatsappDataAdaptor adaptor = new WhatsappDataAdaptor(whatsappArr[i], whatsappArr_num[i]);

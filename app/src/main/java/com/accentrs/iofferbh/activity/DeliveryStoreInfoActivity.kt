@@ -236,7 +236,7 @@ class DeliveryStoreInfoActivity : BaseActivity() {
     private fun phoneData(){
         phoneArr = phone.split("|").toTypedArray()
         phoneArr_num = phone_num.split("|").toTypedArray()
-        for ((index, value) in whatsappArr.withIndex()) {
+        for ((index, value) in phoneArr.withIndex()) {
             val adaptor:PhoneDataAdaptor = PhoneDataAdaptor(phoneArr.get(index), phoneArr_num.get(index))
             phoneAdaptors.add(adaptor)
         }
