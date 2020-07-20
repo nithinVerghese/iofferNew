@@ -105,7 +105,13 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
 
         configureToolBar();
         fetchIntentData();
-        hitApi(offersItem.getCompanyId());
+        if(status.equals("No") || status.equals("0")){
+            ivShareDelivery.setVisibility(View.GONE);
+        }
+        if(status.equals("Yes")){
+            hitApi(offersItem.getCompanyId());
+        }
+
         initializeViews();
         setListeners();
         setRecyclerView();
@@ -151,9 +157,7 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
             status = getIntent().getStringExtra("status");
             Log.d("eeeeeeee","n "+status);
 
-            if(status.equals("No")){
-                ivShareDelivery.setVisibility(View.GONE);
-            }
+
 //            initializeToolbar();
 
         }
@@ -340,39 +344,6 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
                     }
                 });
 
-
-//        FutureTarget<Bitmap> futureTarget =
-//                Glide.with(this)
-//                        .asBitmap()
-//                        .load(com.accentrs.apilibrary.utils.Constants.BASE_URL.concat(offersItem.getOfferImages().get(position).getUrl()))
-//                        .submit(720, 1280);
-//
-//        try {
-//            Bitmap newBitmap = futureTarget.get();
-//            String filesDir = getFilesDir()+File.separator+"Image";
-//            File dir = new File(filesDir);
-//            if (!dir.exists()) {
-//                dir.mkdirs();
-//            }
-//            File storeFile = new File(dir,"image1.jpg");
-//            storeFile.deleteOnExit();
-//            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//            newBitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-//            try {
-//                storeFile.createNewFile();
-//                FileOutputStream fo = new FileOutputStream(storeFile);
-//                fo.write(bytes.toByteArray());
-//                fo.close();
-//                bytes.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return storeFile.getPath();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @Override
@@ -404,7 +375,7 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
         });
 
         iv_icon.setImageResource(R.drawable.whatsapp_ba);
-        String shareUrl = Constants.OFFER_SHARE_URL.concat(Constants.PARAMETER_QUES)
+        String shareUrl = Constants.OFFER_SHARE_URL_DE.concat(Constants.PARAMETER_QUES)
                 .concat(Constants.ID).concat(Constants.PARAMETER_EQUALS).concat(offersItem.getId());
         mainAdaptor = new OfferDeliveryWhatsappAdaptor(this, dataAdaptors, shareUrl);
         rcv.setAdapter(mainAdaptor);

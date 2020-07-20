@@ -23,6 +23,7 @@ import com.accentrs.iofferbh.activity.CouponCategoryActivity;
 import com.accentrs.iofferbh.activity.DeliveryActivity;
 import com.accentrs.iofferbh.activity.HomeScreenActivity;
 import com.accentrs.iofferbh.activity.MyCouponActivity;
+import com.accentrs.iofferbh.activity.RecyclerTouchListener;
 import com.accentrs.iofferbh.activity.multiClickDissable;
 import com.accentrs.iofferbh.adapter.company.CompanyAdapter;
 import com.accentrs.iofferbh.adapter.company.CompanyListOfferAdapter;
@@ -63,10 +64,6 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
     private Context mContext;
     private HomeScreenModel homeScreenModel;
     private HomeScreenModel companyOfferModel;
-
-
-
-
     private final static int HOME_OFFER_SLIDER_VIEW_TYPE = 5;
     private final static int HOME_CATEGORY_VIEW_TYPE = 10;
     private final static int HOME_COMPANY_VIEW_TYPE = 15;
@@ -129,7 +126,7 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
             view = LayoutInflater.from(mContext).inflate(R.layout.row_home_slider_layout, parent, false);
             return new HomeSliderHolder(view);
         } else
-            if (viewType == HOME_CATEGORY_VIEW_TYPE) {
+        if (viewType == HOME_CATEGORY_VIEW_TYPE) {
             view = LayoutInflater.from(mContext).inflate(R.layout.row_home_category_layout, parent, false);
             return new HomeCategoryViewHolder(view);
         } else if (viewType == HOME_COMPANY_VIEW_TYPE) {
@@ -304,14 +301,13 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
         }
 
-
         ApiServices apiServices = createServiceDe().create(ApiServices.class);
         Call<List <Dstatus>> call = apiServices.dstatus();
         call.enqueue(new Callback<List<Dstatus>>() {
             @Override
             public void onResponse(Call<List<Dstatus>> call, retrofit2.Response<List<Dstatus>> response) {
                 List <Dstatus> status = response.body();
-
+                assert status != null;
                 String stat = status.get(0).getOptionValue();
                 Log.d("statatat","nnn"+stat);
 
@@ -424,11 +420,11 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
                 }
 
                 if (Utils.isConnectedToInternet(mContext)) {
-                        Intent mIntent = new Intent(mContext, CategoryOfferActivity.class);
-                        mContext.startActivity(mIntent);
-                    } else {
-                        ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
-                    }
+                    Intent mIntent = new Intent(mContext, CategoryOfferActivity.class);
+                    mContext.startActivity(mIntent);
+                } else {
+                    ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
+                }
 
             }
         });
@@ -445,15 +441,15 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
                 }
 
 
-                    if (Utils.isConnectedToInternet(mContext)) {
+                if (Utils.isConnectedToInternet(mContext)) {
 
-                        Intent mIntent = new Intent(mContext, CouponCategoryActivity.class);
-                        mContext.startActivity(mIntent);
-                       // ((HomeScreenActivity)mContext).finish();
+                    Intent mIntent = new Intent(mContext, CouponCategoryActivity.class);
+                    mContext.startActivity(mIntent);
+                    // ((HomeScreenActivity)mContext).finish();
 
-                    } else {
-                        ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
-                    }
+                } else {
+                    ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
+                }
 
 //
 
@@ -472,13 +468,13 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
                     return;
                 }
 
-                    if (Utils.isConnectedToInternet(mContext)) {
-                                                Intent mIntent = new Intent(mContext, MyCouponActivity.class);
-                                                mContext.startActivity(mIntent);
-                        //((HomeScreenActivity)mContext).finish();
-                                            } else {
-                                                ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
-                                            }
+                if (Utils.isConnectedToInternet(mContext)) {
+                    Intent mIntent = new Intent(mContext, MyCouponActivity.class);
+                    mContext.startActivity(mIntent);
+                    //((HomeScreenActivity)mContext).finish();
+                } else {
+                    ((HomeScreenActivity) mContext).showToast(mContext.getString(R.string.error_no_internet_msg));
+                }
 //
 
 
@@ -526,53 +522,74 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
         viewHolder.rvHomeCompany.setLayoutManager(mLayoutManager);
 
-
         if (companyAdapter == null) {
             companyAdapter = new CompanyAdapter(mContext,filterCompanyList(homeScreenModel.getCompanies()));
             viewHolder.rvHomeCompany.setAdapter(companyAdapter);
 
-            viewHolder.rvHomeCompany.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
-                @Override
-                public void onItemClick(View view, int position) {
+//            viewHolder.rvHomeCompany.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(View view, int position) {
+//                    if (homeScreenModel.getCompanies() != null) {
+//                        if (position != 0) {
+//                            if (homeScreenModel.getCompanies().get(position - 1).getId() != currentCompanyId) {
+//                                callCompanyOffer(homeScreenModel.getCompanies().get(position - 1).getId());
+//                            }
+//                        } else {
+//                            if (currentCompanyId != position) {
+//                                callCompanyOffer(0);
+//                            }
+//                        }
+//                        companyAdapter.setSelectedPosition(position);
+//                    }
+//                }
 
+
+//                @Override
+//                public void onItemLongPress(View childView, int position) {
+//                    if (homeScreenModel.getCompanies() != null) {
+//                        if (position != 0) {
+//                            if (homeScreenModel.getCompanies().get(position - 1).getId() != currentCompanyId) {
+//                                callCompanyOffer(homeScreenModel.getCompanies().get(position - 1).getId());
+//                            }
+//                        } else {
+//                            if (currentCompanyId != position) {
+//                                callCompanyOffer(0);
+//                            }
+//                        }
+//                        companyAdapter.setSelectedPosition(position);
+//                    }
+//                }
+//            }));
+
+            viewHolder.rvHomeCompany.addOnItemTouchListener(new RecyclerTouchListener(mContext, viewHolder.rvHomeCompany, new RecyclerTouchListener.ClickListener() {
+                @Override
+                public void onClick(View view, int position) {
 
                     if (homeScreenModel.getCompanies() != null) {
-
-
                         if (position != 0) {
                             if (homeScreenModel.getCompanies().get(position - 1).getId() != currentCompanyId) {
-
                                 callCompanyOffer(homeScreenModel.getCompanies().get(position - 1).getId());
-
                             }
-
-
                         } else {
-
                             if (currentCompanyId != position) {
                                 callCompanyOffer(0);
                             }
-
                         }
-
                         companyAdapter.setSelectedPosition(position);
-
-
                     }
-
-
                 }
 
+
+
                 @Override
-                public void onItemLongPress(View childView, int position) {
+                public void onLongClick(View view, int position) {
 
                 }
             }));
+
+
         }
-
-
     }
-
 
     private void callCompanyOffer(int companyId) {
         ((HomeScreenActivity) mContext).setCompanyOffers(companyId);
@@ -686,3 +703,4 @@ public class HomeAdapter extends RecyclerView.Adapter<MainViewHolder> {
     }
 
 }
+

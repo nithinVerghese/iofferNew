@@ -48,8 +48,8 @@ class CouponLocationFragment : DialogFragment() {
     }
 
     private fun setDialog() {
-        if (dialog.window != null)
-            dialog.window!!.requestFeature(Window.FEATURE_NO_TITLE)
+        if (dialog?.window != null)
+            dialog!!.window!!.requestFeature(Window.FEATURE_NO_TITLE)
     }
 
 

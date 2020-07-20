@@ -44,19 +44,19 @@ class AdsPopupDialogFragment : DialogFragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_ads_popup_dialog, container, false)
-            dialog.requestWindowFeature(STYLE_NO_TITLE)
-            dialog.setCancelable(false)
+            dialog?.requestWindowFeature(STYLE_NO_TITLE)
+            dialog?.setCancelable(false)
             initializeResources()
         }
         return rootView
     }
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         adsPopupListener = context as AdsPopupListener?
     }
 
-    override fun onDismiss(dialog: DialogInterface?) {
+    override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
         adsPopupListener!!.showSpinningWheelSpinner()
     }

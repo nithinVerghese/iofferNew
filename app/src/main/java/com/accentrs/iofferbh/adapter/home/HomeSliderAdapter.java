@@ -101,22 +101,22 @@ public class HomeSliderAdapter extends RecyclerView.Adapter<HomeSliderViewHolder
                     return;
                 }
 
-                    Type type = new TypeToken<LatestOffersItem>() {
-                    }.getType();
-                    String offerJson = new Gson().toJson(latestOffersItems.get(holder.getAdapterPosition()), type);
+                Type type = new TypeToken<LatestOffersItem>() {
+                }.getType();
+                String offerJson = new Gson().toJson(latestOffersItems.get(holder.getAdapterPosition()), type);
 
-                    Log.d("offer model", offerJson + "");
-                    OffersItem offersItem = new Gson().fromJson(offerJson, OffersItem.class);
-
-
-                    Intent intent = new Intent(context, OfferDetailActivity.class);
-                    Bundle mBundle = new Bundle();
-                    mBundle.putSerializable(Constants.OFFER_DATA_KEY, offersItem);
-                    intent.putExtras(mBundle);
-                    context.startActivity(intent);
+                Log.d("offer model", offerJson + "");
+                OffersItem offersItem = new Gson().fromJson(offerJson, OffersItem.class);
 
 
-                }
+                Intent intent = new Intent(context, OfferDetailActivity.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putSerializable(Constants.OFFER_DATA_KEY, offersItem);
+                intent.putExtras(mBundle);
+                context.startActivity(intent);
+
+
+            }
 
         });
 

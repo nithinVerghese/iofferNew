@@ -1,6 +1,7 @@
 package com.accentrs.iofferbh.model.home;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.accentrs.iofferbh.model.companydetail.Company;
@@ -17,10 +18,10 @@ public class OffersItem implements Serializable{
 	private boolean isViewed;
 
 	@SerializedName("offer_images")
-	private List<OfferImagesItem> offerImages;
+	private ArrayList<OfferImagesItem> offerImages;
 
 	@SerializedName("company")
-	private List<Company> company;
+	private Company company;
 
 	@SerializedName("company_id")
 	private String companyId;
@@ -61,6 +62,28 @@ public class OffersItem implements Serializable{
 	@SerializedName("start_date")
 	private String startDate;
 
+	@SerializedName("delievery_status")
+	private String delievery_status;
+
+	@SerializedName("locations")
+	private ArrayList<LocationsItem> Locations;
+
+	public ArrayList<LocationsItem> getLocations() {
+		return Locations;
+	}
+
+	public void setLocations(ArrayList<LocationsItem> locations) {
+		Locations = locations;
+	}
+
+	public String getDelievery_status() {
+		return delievery_status;
+	}
+
+	public void setDelievery_status(String delievery_status) {
+		this.delievery_status = delievery_status;
+	}
+
 	public void setEndDate(String endDate){
 		this.endDate = endDate;
 	}
@@ -77,11 +100,11 @@ public class OffersItem implements Serializable{
 		return isViewed;
 	}
 
-	public void setOfferImages(List<OfferImagesItem> offerImages){
+	public void setOfferImages(ArrayList<OfferImagesItem> offerImages){
 		this.offerImages = offerImages;
 	}
 
-	public List<OfferImagesItem> getOfferImages(){
+	public ArrayList<OfferImagesItem> getOfferImages(){
 		return offerImages;
 	}
 
@@ -197,32 +220,36 @@ public class OffersItem implements Serializable{
 		this.companyNameAr = companyNameAr;
 	}
 
-	public List<Company> getCompany() {
+	public Company getCompany() {
 		return company;
 	}
 
-	public void setCompany(List<Company> company) {
+	public void setCompany(Company company) {
 		this.company = company;
 	}
 
 	@Override
-	public String toString(){
-		return
-				"Response{" +
-						"end_date = '" + endDate + '\'' +
-						",is_viewed = '" + isViewed + '\'' +
-						",offer_images = '" + offerImages + '\'' +
-						",company_id = '" + companyId + '\'' +
-						",name_ar = '" + nameAr + '\'' +
-						",description_en = '" + descriptionEn + '\'' +
-						",category_id = '" + categoryId + '\'' +
-						",company_logo = '" + companyLogo + '\'' +
-						",id = '" + id + '\'' +
-						",country_id = '" + countryId + '\'' +
-						",view_count = '" + viewCount + '\'' +
-						",name_en = '" + nameEn + '\'' +
-						",description_ar = '" + descriptionAr + '\'' +
-						",start_date = '" + startDate + '\'' +
-						"}";
+	public String toString() {
+		return "OffersItem{" +
+				"endDate='" + endDate + '\'' +
+				", isViewed=" + isViewed +
+				", offerImages=" + offerImages +
+				", company=" + company +
+				", companyId='" + companyId + '\'' +
+				", nameAr=" + nameAr +
+				", descriptionEn='" + descriptionEn + '\'' +
+				", categoryId='" + categoryId + '\'' +
+				", companyLogo='" + companyLogo + '\'' +
+				", companyNameEn='" + companyNameEn + '\'' +
+				", companyNameAr='" + companyNameAr + '\'' +
+				", id='" + id + '\'' +
+				", countryId=" + countryId +
+				", viewCount='" + viewCount + '\'' +
+				", nameEn='" + nameEn + '\'' +
+				", descriptionAr='" + descriptionAr + '\'' +
+				", startDate='" + startDate + '\'' +
+				", delievery_status='" + delievery_status + '\'' +
+				", Locations=" + Locations +
+				'}';
 	}
 }

@@ -30,15 +30,21 @@ import com.accentrs.iofferbh.model.bookmark.BookmarkModel;
 import com.accentrs.iofferbh.model.bookmark.BookmarksItem;
 import com.accentrs.iofferbh.model.fcm.UserDeviceModel;
 import com.accentrs.iofferbh.model.home.OffersItem;
+import com.accentrs.iofferbh.model.home.Result;
 import com.accentrs.iofferbh.utils.Constants;
 import com.accentrs.iofferbh.utils.SharedPreferencesData;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_SMS;
@@ -206,7 +212,21 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void onSuccess(ResponseType response) {
 //                hideHomeProgress();
+                Gson gson = new Gson();
+                Log.d(TAG, "onSuccess: "+response.getStringResponse().toString());
+
+                String res_str = response.getStringResponse().toString();
+//                ArrayList<OffersItem> results = gson.fromJson(response.toString(), new TypeToken<ArrayList<OffersItem>>(){}.getType());
+
+//                GsonBuilder builder = new GsonBuilder();
+//                Gson mGson = builder.create();
+//                List<OffersItem> posts = new ArrayList<OffersItem>();
+//                //posts = Arrays.asList(mGson.fromJson(String.valueOf(response), OffersItem[].class));
+//                Result offersItem = mGson.fromJson(response.getStringResponse().toString(), Result.class);
+//                offersItem.getOfferImages();
                 OffersItem offersItem = new Gson().fromJson(response.getStringResponse().toString(), OffersItem.class);
+//                OffersItem offersItem1 = new OffersItem();
+
                 gotoOfferDetail(offersItem);
 
             }

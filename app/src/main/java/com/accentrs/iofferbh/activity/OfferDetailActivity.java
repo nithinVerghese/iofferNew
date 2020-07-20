@@ -148,7 +148,12 @@ public class OfferDetailActivity extends BaseActivity {
             public void onSuccess(ResponseType response) {
 //                hideHomeProgress();
                 companyModel = new Gson().fromJson(response.getStringResponse().toString(), CompanyDetailModel.class);
-                Delivery = companyModel.getCompany().getDelieveryStatus();
+                String del = companyModel.getCompany().getDelieveryStatus();
+                if(del == null){
+                    Delivery = "No";
+                }else {
+                    Delivery = del;
+                }
                 setOfferDetailAdapter(Delivery);
                 setCompanyDetailData();
 

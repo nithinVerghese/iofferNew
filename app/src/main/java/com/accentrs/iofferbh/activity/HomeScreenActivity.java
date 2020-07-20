@@ -563,7 +563,6 @@ public class HomeScreenActivity extends DrawerActivity implements FragmentDrawer
         mResult.setOnResultsCallBack(new Results.ResultsCallBack() {
             @Override
             public void onSuccess(ResponseType response) {
-
                 companyOfferModel = new Gson().fromJson(response.getStringResponse().toString(), HomeScreenModel.class);
 
                 if (PAGE_COUNT > 1) {
@@ -714,6 +713,7 @@ public class HomeScreenActivity extends DrawerActivity implements FragmentDrawer
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
 
             case CompanyListOfferAdapter.WISHLIST_ACTION_RESULT:

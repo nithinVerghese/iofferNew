@@ -16,19 +16,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-<!--            <com.accentrs.iofferbh.view.OpenSansBoldTextView-->
-<!--                android:id="@+id/tv_latest_offers"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingLeft="@dimen/margin_5_dp"-->
-<!--                android:layout_marginTop="@dimen/margin_20_dp"-->
-<!--                android:layout_gravity="start"-->
-<!--                android:layout_marginRight="@dimen/margin_50_dp"-->
+            <!--            <com.accentrs.iofferbh.view.OpenSansBoldTextView-->
+            <!--                android:id="@+id/tv_latest_offers"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingLeft="@dimen/margin_5_dp"-->
+            <!--                android:layout_marginTop="@dimen/margin_20_dp"-->
+            <!--                android:layout_gravity="start"-->
+            <!--                android:layout_marginRight="@dimen/margin_50_dp"-->
 
-<!--                android:lines="1"-->
-<!--                android:text="@string/latest_offers_text"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="17sp" />-->
+            <!--                android:lines="1"-->
+            <!--                android:text="@string/latest_offers_text"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="17sp" />-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                   android:layout_margin="@dimen/margin_5_dp"
+                    android:layout_margin="@dimen/margin_5_dp"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/ic_coupons" />
 

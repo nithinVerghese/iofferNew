@@ -30,12 +30,13 @@ public class Constants {
     //production url
 //    public static final String BASE_URL = "http://iofferbh.accentrs.com/";
     public static final String BASE_URL3 = "http://infoline.website/";
-    public static final String BASE_URL = "http://testserver.sayg.bh/";
+//    public static final String BASE_URL = "http://testserver.sayg.bh/";
+    public static final String BASE_URL = "http://coupon.infoline.website/";
     public static final String BASE_URL1 = "http://coupon.infoline.website/";
     public static final String BASE_URL2 = "http://coupon.infoline.website/api/";
-    public static final String BASE_URL_DE = "http://testserver.sayg.bh/api/";
+    public static final String BASE_URL_DE = "http://coupon.infoline.website/api/";
     public static final String IMAGE_URL = "http://coupon.infoline.website/storage/coupon_module/";
-    public static final String IMAGE_URL_DE = "http://testserver.sayg.bh/";
+    public static final String IMAGE_URL_DE = "http://coupon.infoline.website/";
     public static final String COMPANY_URL = BASE_URL + "api/company";
     public static final String COMPANY_DETAIL_URL = BASE_URL + "api/offer/";
     public static final String HOME_OFFERS_URL = BASE_URL + "api/company-home";
@@ -49,6 +50,7 @@ public class Constants {
     public static final String ADD_USER_GCM_DEVICE_URL = BASE_URL1 + "api/gcm";
     public static final String USER_OFFER_VIEW_URL = BASE_URL + "api/offer-view";
     public static final String OFFER_SHARE_URL = BASE_URL + "share";
+    public static final String OFFER_SHARE_URL_DE = BASE_URL1 + "share";
     public static final String SPINNING_WHEEL_GAME_URL = BASE_URL1 + "api/spin-wheel";
     public static final String ADS_POPUP_URL = BASE_URL1 + "api/ads-popup";
 

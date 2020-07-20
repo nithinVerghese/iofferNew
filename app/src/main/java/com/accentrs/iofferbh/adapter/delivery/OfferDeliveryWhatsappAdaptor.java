@@ -43,15 +43,15 @@ public class OfferDeliveryWhatsappAdaptor extends RecyclerView.Adapter<OfferDeli
 
     @Override
     public void onBindViewHolder( mainViewHolder holder, int position) {
-        holder.mainText.setText(modelList.get(position).getValue());
-        holder.subText.setText(modelList.get(position).getKey());
+        holder.mainText.setText(modelList.get(position).getKey());
+        holder.subText.setText(modelList.get(position).getValue());
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 boolean installed = appInstalledOrNot("com.whatsapp");
                 if(installed) {
-                    String url = "https://api.whatsapp.com/send?phone=" + modelList.get(position).getKey() + "&text=" +imageURL;
+                    String url = "https://api.whatsapp.com/send?phone=" + modelList.get(position).getValue() + "&text=" +imageURL;
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(url));
                     context.startActivity(i);

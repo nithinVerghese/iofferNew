@@ -229,7 +229,7 @@ class DeliveryCompanyInfo : BaseActivity() {
         whatsappArr = whatsapp.split("|").toTypedArray()
         whatsappArr_num = whatsapp_num.split("|").toTypedArray()
         for ((index, value) in whatsappArr.withIndex()) {
-            val adaptor:WhatsappDataAdaptor = WhatsappDataAdaptor(whatsappArr.get(index), whatsappArr_num.get(index))
+            val adaptor:WhatsappDataAdaptor = WhatsappDataAdaptor(whatsappArr_num.get(index), whatsappArr.get(index))
             dataAdaptors.add(adaptor)
         }
     }
@@ -238,7 +238,7 @@ class DeliveryCompanyInfo : BaseActivity() {
         phoneArr = phone.split("|").toTypedArray()
         phoneArr_num = phone_num.split("|").toTypedArray()
         for ((index, value) in phoneArr.withIndex()) {
-            val adaptor:PhoneDataAdaptor = PhoneDataAdaptor(phoneArr.get(index), phoneArr_num.get(index))
+            val adaptor:PhoneDataAdaptor = PhoneDataAdaptor(phoneArr_num.get(index), phoneArr.get(index))
             phoneAdaptors.add(adaptor)
         }
     }

@@ -111,6 +111,7 @@ public class Results extends VolleyClass {
                             HttpHeaderParser.parseCharset(response.headers));
 
                     setResponseTypeString(networkData);
+                    Log.d(TAG, "onResponse: "+networkData);
 
 
                 } catch (UnsupportedEncodingException e) {
