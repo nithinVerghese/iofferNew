@@ -402,8 +402,8 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
 //
 //                }
 
-                whatsapp = dataAbout.get(0).getWhatsapp();
-                whatsapp_num = dataAbout.get(0).getWhatsappName();
+                whatsapp = dataAbout.get(0).getWhatsappName();
+                whatsapp_num = dataAbout.get(0).getWhatsapp();
                 whatsappData();
             }
 
