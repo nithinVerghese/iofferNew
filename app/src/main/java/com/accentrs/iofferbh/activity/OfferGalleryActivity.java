@@ -375,8 +375,7 @@ public class OfferGalleryActivity extends HeaderActivity implements View.OnClick
         });
 
         iv_icon.setImageResource(R.drawable.whatsapp_ba);
-        String shareUrl = Constants.OFFER_SHARE_URL_DE.concat(Constants.PARAMETER_QUES)
-                .concat(Constants.ID).concat(Constants.PARAMETER_EQUALS).concat(offersItem.getId());
+        String shareUrl = com.accentrs.apilibrary.utils.Constants.BASE_URL.concat(offersItem.getOfferImages().get(position).getUrl());
         mainAdaptor = new OfferDeliveryWhatsappAdaptor(this, dataAdaptors, shareUrl);
         rcv.setAdapter(mainAdaptor);
         rcv.setLayoutManager(new GridLayoutManager(this, 1));

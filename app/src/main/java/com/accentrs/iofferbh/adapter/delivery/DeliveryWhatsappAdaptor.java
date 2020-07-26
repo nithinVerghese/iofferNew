@@ -49,10 +49,16 @@ public class DeliveryWhatsappAdaptor extends RecyclerView.Adapter<DeliveryWhatsa
 
                 boolean installed = appInstalledOrNot("com.whatsapp");
                 if(installed) {
-                    Uri uri = Uri.parse("smsto:"+modelList.get(position).getKey());
-                    Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-                    i.setPackage("com.whatsapp");
+//                    Uri uri = Uri.parse("smsto:"+modelList.get(position).getKey());
+//                    Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+//                    i.setPackage("com.whatsapp");
+//                    context.startActivity(i);
+
+                    String url = "https://api.whatsapp.com/send?phone=" + modelList.get(position).getKey() ;
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
                     context.startActivity(i);
+
                 } else {
 
                     Toast.makeText(context, "Whatsapp is not installed ", Toast.LENGTH_SHORT).show();
