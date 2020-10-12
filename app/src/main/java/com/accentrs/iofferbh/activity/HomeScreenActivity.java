@@ -121,7 +121,7 @@ public class HomeScreenActivity extends DrawerActivity implements FragmentDrawer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        press=0;
+//        press=0;
 
         mQueue = Volley.newRequestQueue(this);
         //jsonpars();

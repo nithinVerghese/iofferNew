@@ -458,7 +458,6 @@ public class Results extends VolleyClass {
 
     public void fetchAdsPopup() {
 
-
         StringRequest mAdsPopupRequest = new StringRequest(Request.Method.GET, Constants.ADS_POPUP_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

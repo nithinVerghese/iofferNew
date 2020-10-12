@@ -27,16 +27,27 @@ public class Constants {
     public static final String SPONSORED_COMPANY_NAME_KEY = "sponsored_company_name_key";
 
 
+    //Test URL
+//    public static final String BASE_URL = "http://testserver.sayg.bh/";
+//    public static final String BASE_URL1 = "http://testserver.sayg.bh/"; //----------->> Offer Module <<------------//
+//    public static final String BASE_URL2 = "http://testserver.sayg.bh/api/";  //----------->> Coupon Module <<------------//
+//    public static final String BASE_URL_DE = "http://testserver.sayg.bh/api/";
+//    public static final String IMAGE_URL = "http://coupon.infoline.website/storage/coupon_module/";
+//    public static final String IMAGE_URL_DE = "http://testserver.sayg.bh/";
+
+
     //production url
 //    public static final String BASE_URL = "http://iofferbh.accentrs.com/";
-    public static final String BASE_URL3 = "http://infoline.website/";
-//    public static final String BASE_URL = "http://testserver.sayg.bh/";
+//    public static final String BASE_URL3 = "http://infoline.website/";
     public static final String BASE_URL = "http://coupon.infoline.website/";
-    public static final String BASE_URL1 = "http://coupon.infoline.website/";
-    public static final String BASE_URL2 = "http://coupon.infoline.website/api/";
+    public static final String BASE_URL1 = "http://coupon.infoline.website/"; //----------->> Offer Module <<------------//
+    public static final String BASE_URL2 = "http://coupon.infoline.website/api/"; //----------->> Coupon Module <<------------//
     public static final String BASE_URL_DE = "http://coupon.infoline.website/api/";
     public static final String IMAGE_URL = "http://coupon.infoline.website/storage/coupon_module/";
     public static final String IMAGE_URL_DE = "http://coupon.infoline.website/";
+//
+
+
     public static final String COMPANY_URL = BASE_URL + "api/company";
     public static final String COMPANY_DETAIL_URL = BASE_URL + "api/offer/";
     public static final String HOME_OFFERS_URL = BASE_URL + "api/company-home";
